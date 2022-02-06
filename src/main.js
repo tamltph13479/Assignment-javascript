@@ -1,17 +1,27 @@
 import Navigo from "navigo";
 import Homepage from "./Pages/Home";
-import Aboutpage from "./Pages/About";
+import Dashboard from "./Pages/Admin/dashboard";
+import NewPage from "./Pages/Admin/New/index";
+import Aboutpage from "./Pages/newlist";
 
-const routes = new Navigo("/", { linksSelector: "a" });
+const router = new Navigo("/", { linksSelector: "a" });
+
 const print = (content) => {
-    document.querySelector("#app").innerHTML = content.render();
+    document.getElementById("app").innerHTML = content;
 };
-routes.on({
+router.on({
     "/": () => {
-        print(Homepage);
+        print(Homepage.render());
     },
-    "/about": () => {
-        print(Aboutpage);
+    "/newlist": () => {
+        print(Aboutpage.render());
+    },
+
+    "/admin/dashboard": () => {
+        print(Dashboard.render());
+    },
+    "/admin/news": () => {
+        print(NewPage.render());
     },
 });
-routes.resolve();
+router.resolve();

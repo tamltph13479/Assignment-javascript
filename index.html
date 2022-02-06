@@ -8,11 +8,89 @@
     <title>Vite App</title>
     <link rel="stylesheet" href="./style.css">
 </head>
+<script>
+    var images = [
+        'Img/2.png', 'Img/3.png', 'Img/4.png', 'Img/5.png', 'Img/6.png',
+    ];
+    var i = 0;
+    var timeA;
+
+    function autu() {
+        i++;
+        document.getElementById('anh').src = images[i];
+        if (i == images.length - 1) {
+            i = -1;
+        }
+
+        timeA = setTimeout(autu, 2000);
+    }
+    window.onload = function() {
+        timeA = setTimeout(autu, 2000);
+    }
+</script>
+<style>
+    .khoiy {
+        position: relative;
+        width: fit-content;
+        overflow: hidden;
+    }
+    
+    .conten-item {
+        position: absolute;
+        bottom: 0;
+        background-color: #fff;
+        width: 100%;
+        transform: translateY(120px);
+        transition: ease-in-out 1s;
+        animation-name: fadeOut;
+        animation-duration: 1s;
+    }
+    
+    .khoiy:hover .conten-item {
+        transform: translateY(0);
+        transition: ease-in-out 1s;
+        animation-name: fadeIn;
+        animation-duration: 1s;
+    }
+    
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    
+    @keyframes fadeOut {
+        from {
+            opacity: 1;
+        }
+        to {
+            opacity: 0;
+        }
+    }
+    
+    .conten-item {
+        text-align: center;
+    }
+    
+    .conten-item button {
+        background-color: rgb(247, 0, 0);
+        color: white;
+        padding: 10px 0;
+        width: 100%;
+    }
+</style>
 
 <body>
-    <a href="/">Home Passe</a>
-    <a href="/about">Home Passe</a>
-    <div id="app"></div>
+    <div class="container min-w-full m-auto">
+        <div id="app"></div>
+    </div>
+
+
+
+
     <script type="module" src="./src/main.js"></script>
 </body>
 
