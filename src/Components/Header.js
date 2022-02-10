@@ -1,7 +1,7 @@
 const Headers = {
     render() {
         return /* html */ `
-                <header>
+     
             <div class="header-top flex justify-between h-[80px] w-[1200px] m-auto">
                 <figure class="logo pt-5">
                     <a href="/">
@@ -11,7 +11,7 @@ const Headers = {
                 <div>
                     <ul class="w-[800px] mt-5 pl-10 flex ">
                         <li><a class="px-[20px]" href="/">Homepage</a></li>
-                        <li><a class="px-[20px]" href="/newlist">About</a></li>
+                        <li><a class="px-[20px]" href="/">About</a></li>
                         <li><a class="px-[20px]" href="">Shopping</a></li>
                         <li><a class="px-[20px]" href="">Phone</a></li>
                         <li><a class="px-[20px]" href="">Contact</a></li>
@@ -72,8 +72,7 @@ const Headers = {
                     </div>
                 </div>
             </div>
-
-        </header>`;
+`;
     },
 };
 export default Headers;

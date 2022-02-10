@@ -1,7 +1,7 @@
 const footer = {
     render() {
         return /* html */ `
-            <div class="w-[1200px] m-auto grid grid-cols-4 pt-10 pb-10 gap-[20px] ">
+            <div class=" w-[1200px] m-auto grid grid-cols-4 pt-10 pb-10 gap-[20px] ">
                 <div class="w-[320px] px-[20px] ">
                     <div>
                         <img src="https://rafcart.rslahmed.com/assets/images/svg/logo.svg" alt="">

@@ -2,7 +2,7 @@ import Navigo from "navigo";
 import Homepage from "./Pages/Home";
 import Dashboard from "./Pages/Admin/dashboard";
 import NewPage from "./Pages/Admin/New/index";
-import Aboutpage from "./Pages/newlist";
+import newlist from "./Pages/newlist";
 
 const router = new Navigo("/", { linksSelector: "a" });
 
@@ -13,10 +13,10 @@ router.on({
     "/": () => {
         print(Homepage.render());
     },
-    "/newlist": () => {
-        print(Aboutpage.render());
+    "/new/:id": ({ data }) => {
+        const { id } = data;
+        print(newlist.render(id));
     },
-
     "/admin/dashboard": () => {
         print(Dashboard.render());
     },
@@ -25,3 +25,6 @@ router.on({
     },
 });
 router.resolve();
+// fetch("https://6203e391c6d8b20017dc3315.mockapi.io/Post")
+//     .then((response) => response.json())
+//     .then((data) => console.log(data));

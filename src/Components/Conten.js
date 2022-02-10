@@ -1,8 +1,8 @@
-const content = {
-    render() {
-        return /* html */ `
-          <article class=" mx-auto w-[1200px] ">
+import data from "../data";
 
+const content = {
+        render() {
+            return /* html */ `
             <div class="flex">
                 <div class="grid w-[200px] h-[100%]">
                     <ul class="border-solid border-2 border[#f3f3f3]">
@@ -58,7 +58,6 @@ const content = {
                 </div>
 
             </div>
-
             <div class="conten my-[20px]">
                 <h1 class="font-bold text-[20px] py-[20px]">New Arrivals</h1>
                 <div class="product grid grid-cols-4 gap-5 ">
@@ -141,16 +140,17 @@ const content = {
             <div class="conten my-[20px]">
                 <h1 class="font-bold text-[20px] py-[20px]">Recomended For You</h1>
                 <div class="product grid grid-cols-4 gap-5 ">
+                 ${data.map((post) => `
                     <form action="">
                         <div class=" khoiy border-solid border-2 border-[#f3f3f3] rounded-lg  ">
                             <div class=" w-[100%] ">
-                                <a href="#"> <img src="https://vnn-imgs-f.vgcloud.vn/2019/08/07/23/apple-tiep-tuc-thong-tri-thi-truong-may-tinh-bang.jpg" alt=""></a>
+                                <a href="/new/${post.id}"> <img src="${post.img}" alt=""></a>
                             </div>
                             <div class="py-[10px] px-[10px] leading-8">
-                                <a href="#">
-                                    <h4 class="font-bold hover:underline">HP Pavilion 15</h4>
+                                <a href="/new/${post.id}">
+                                    <h4 class="font-bold hover:underline">${post.title}</h4>
                                 </a>
-                                <p class="text-[15px] text-[red]">$450.000000</p>
+                                <p class="text-[15px] text-[red]">${post.desc}</p>
                                 <p>130,000,000 lượt xem</p>
                             </div>
                             <div class="conten-item ">
@@ -158,130 +158,14 @@ const content = {
                             </div>
                         </div>
                     </form>
-                    <form action="">
-                        <div class=" khoiy border-solid border-2 border-[#f3f3f3] rounded-lg  ">
-                            <div class=" w-[100%] ">
-                                <a href="#"> <img src="https://vnn-imgs-f.vgcloud.vn/2019/08/07/23/apple-tiep-tuc-thong-tri-thi-truong-may-tinh-bang.jpg" alt=""></a>
-                            </div>
-                            <div class="py-[10px] px-[10px] leading-8">
-                                <a href="#">
-                                    <h4 class="font-bold hover:underline">HP Pavilion 15</h4>
-                                </a>
-                                <p class="text-[15px] text-[red]">$450.000000</p>
-                                <p>130,000,000 lượt xem</p>
-                            </div>
-                            <div class="conten-item ">
-                                <button>Add to cart</button>
-                            </div>
-                        </div>
-                    </form>
-                    <form action="">
-                        <div class=" khoiy border-solid border-2 border-[#f3f3f3] rounded-lg  ">
-                            <div class=" w-[100%] ">
-                                <a href="#"> <img src="https://vnn-imgs-f.vgcloud.vn/2019/08/07/23/apple-tiep-tuc-thong-tri-thi-truong-may-tinh-bang.jpg" alt=""></a>
-                            </div>
-                            <div class="py-[10px] px-[10px] leading-8">
-                                <a href="#">
-                                    <h4 class="font-bold hover:underline">HP Pavilion 15</h4>
-                                </a>
-                                <p class="text-[15px] text-[red]">$450.000000</p>
-                                <p>130,000,000 lượt xem</p>
-                            </div>
-                            <div class="conten-item ">
-                                <button>Add to cart</button>
-                            </div>
-                        </div>
-                    </form>
-                    <form action="">
-                        <div class=" khoiy border-solid border-2 border-[#f3f3f3] rounded-lg  ">
-                            <div class=" w-[100%] ">
-                                <a href="#"> <img src="https://vnn-imgs-f.vgcloud.vn/2019/08/07/23/apple-tiep-tuc-thong-tri-thi-truong-may-tinh-bang.jpg" alt=""></a>
-                            </div>
-                            <div class="py-[10px] px-[10px] leading-8">
-                                <a href="#">
-                                    <h4 class="font-bold hover:underline">HP Pavilion 15</h4>
-                                </a>
-                                <p class="text-[15px] text-[red]">$450.000000</p>
-                                <p>130,000,000 lượt xem</p>
-                            </div>
-                            <div class="conten-item ">
-                                <button>Add to cart</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="product grid grid-cols-4 gap-5 my-[20px] ">
-                    <form action="">
-                        <div class=" khoiy border-solid border-2 border-[#f3f3f3] rounded-lg  ">
-                            <div class=" w-[100%] ">
-                                <a href="#"> <img src="https://vnn-imgs-f.vgcloud.vn/2019/08/07/23/apple-tiep-tuc-thong-tri-thi-truong-may-tinh-bang.jpg" alt=""></a>
-                            </div>
-                            <div class="py-[10px] px-[10px] leading-8">
-                                <a href="#">
-                                    <h4 class="font-bold hover:underline">HP Pavilion 15</h4>
-                                </a>
-                                <p class="text-[15px] text-[red]">$450.000000</p>
-                                <p>130,000,000 lượt xem</p>
-                            </div>
-                            <div class="conten-item ">
-                                <button>Add to cart</button>
-                            </div>
-                        </div>
-                    </form>
-                    <form action="">
-                        <div class=" khoiy border-solid border-2 border-[#f3f3f3] rounded-lg  ">
-                            <div class=" w-[100%] ">
-                                <a href="#"> <img src="https://vnn-imgs-f.vgcloud.vn/2019/08/07/23/apple-tiep-tuc-thong-tri-thi-truong-may-tinh-bang.jpg" alt=""></a>
-                            </div>
-                            <div class="py-[10px] px-[10px] leading-8">
-                                <a href="#">
-                                    <h4 class="font-bold hover:underline">HP Pavilion 15</h4>
-                                </a>
-                                <p class="text-[15px] text-[red]">$450.000000</p>
-                                <p>130,000,000 lượt xem</p>
-                            </div>
-                            <div class="conten-item ">
-                                <button>Add to cart</button>
-                            </div>
-                        </div>
-                    </form>
-                    <form action="">
-                        <div class=" khoiy border-solid border-2 border-[#f3f3f3] rounded-lg  ">
-                            <div class=" w-[100%] ">
-                                <a href="#"> <img src="https://vnn-imgs-f.vgcloud.vn/2019/08/07/23/apple-tiep-tuc-thong-tri-thi-truong-may-tinh-bang.jpg" alt=""></a>
-                            </div>
-                            <div class="py-[10px] px-[10px] leading-8">
-                                <a href="#">
-                                    <h4 class="font-bold hover:underline">HP Pavilion 15</h4>
-                                </a>
-                                <p class="text-[15px] text-[red]">$450.000000</p>
-                                <p>130,000,000 lượt xem</p>
-                            </div>
-                            <div class="conten-item ">
-                                <button>Add to cart</button>
-                            </div>
-                        </div>
-                    </form>
-                    <form action="">
-                        <div class=" khoiy border-solid border-2 border-[#f3f3f3] rounded-lg  ">
-                            <div class=" w-[100%] ">
-                                <a href="#"> <img src="https://vnn-imgs-f.vgcloud.vn/2019/08/07/23/apple-tiep-tuc-thong-tri-thi-truong-may-tinh-bang.jpg" alt=""></a>
-                            </div>
-                            <div class="py-[10px] px-[10px] leading-8">
-                                <a href="#">
-                                    <h4 class="font-bold hover:underline">HP Pavilion 15</h4>
-                                </a>
-                                <p class="text-[15px] text-[red]">$450.000000</p>
-                                <p>130,000,000 lượt xem</p>
-                            </div>
-                            <div class="conten-item ">
-                                <button>Add to cart</button>
-                            </div>
-                        </div>
-                    </form>
+
+         `).join("")}
+ 
                 </div>
 
+
             </div>
+            
             <div class="bg-[#f3f3f3] grid grid-cols-2 gap-5 my-[20px] ">
                 <div class="img-1">
                     <img src="https://rafcart.rslahmed.com/assets/images/mobile-view.png" alt="" class="w-[50%] m-auto">
