@@ -1,11 +1,10 @@
 import Headers from "../Components/Header";
 import footer from "../Components/Footer";
-import data from "../data";
+import {get } from "../api/posts";
 
 const newlist = {
-    render(id) {
-        const result = data.find((post) => post.id === id);
-        console.log(result);
+    async render(id) {
+        const { data } = await get(id);
         return /* html */ `
           <header>
         ${Headers.render()}
@@ -14,7 +13,7 @@ const newlist = {
      <div class="mx-auto w-[1200px] my-10">
    
             <div class="grid grid-cols-2 mb-3">
-                <h2 class="font-bold text-xl ">${result.title}</h2>
+                <h2 class="font-bold text-xl ">${data.title}</h2>
                 <div class="mt-2 flex justify-end">
                     <a href="" class="mt-1">
             <ul class="flex ">
@@ -54,7 +53,7 @@ const newlist = {
                 <div class="mr-3">
                     <div class="border-[1px]">
                         <a href="">
-                            <img src="${result.img}">
+                            <img src="${data.img}">
                         </a>
                     </div>
                     <div class="flex flex-row justify-center">
@@ -88,7 +87,7 @@ const newlist = {
                 </div>
                 <div class="detail">
                     <div class="flex ">
-                        <span class="text-red-700 font-semibold text-2xl mr-5 mt-2">${result.desc}</span>
+                        <span class="text-red-700 font-semibold text-2xl mr-5 mt-2">${data.desc}</span>
                         <span class="font-semibold text-lg line-through mt-3">30.990.000₫</span>
                         <span class="ml-52">Trả góp chỉ từ 3.000.500₫/tháng</span>
                     </div>
@@ -198,7 +197,7 @@ const newlist = {
         <div class =""> 
               <h1 class="uppercase text-[16px] font-bold border-b-[1px] mt-2 pl-1"> Thông tin chi tiết sản phẩm </h1>
    
-              <p class="text-[14px] leading-[1.8] mb-3">${result.post}
+              <p class="text-[14px] leading-[1.8] mb-3">${data.post}
                 </p>
         </div>
          

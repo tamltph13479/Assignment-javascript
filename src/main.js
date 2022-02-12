@@ -3,26 +3,25 @@ import Homepage from "./Pages/Home";
 import Dashboard from "./Pages/Admin/dashboard";
 import NewPage from "./Pages/Admin/New/index";
 import newlist from "./Pages/newlist";
+import AddnewPage from "./Pages/Admin/New/add";
+import Editnews from "./Pages/Admin/New/edit";
 
 const router = new Navigo("/", { linksSelector: "a" });
 
-const print = (content) => {
-    document.getElementById("app").innerHTML = content;
+const print = async(content, id) => {
+    document.getElementById("app").innerHTML = await content.render(id);
 };
 router.on({
-    "/": () => {
-        print(Homepage.render());
-    },
-    "/new/:id": ({ data }) => {
-        const { id } = data;
-        print(newlist.render(id));
-    },
-    "/admin/dashboard": () => {
-        print(Dashboard.render());
-    },
-    "/admin/news": () => {
-        print(NewPage.render());
-    },
+    "/": () => print(Homepage),
+
+    "/new/:id": ({ data }) => print(newlist, data.id),
+
+    "/admin/dashboard": () => print(Dashboard),
+
+    "/admin/news": () => print(NewPage),
+    "/admin/news/add": () => print(AddnewPage),
+    "/admin/news/edit": () => print(Editnews),
+
 });
 router.resolve();
 // fetch("https://6203e391c6d8b20017dc3315.mockapi.io/Post")

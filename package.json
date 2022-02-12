@@ -1,21 +1,23 @@
 {
-  "name": "my-app",
-  "version": "0.0.0",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
-  },
-  "devDependencies": {
-    "autoprefixer": "^10.4.2",
-    "eslint": "^8.8.0",
-    "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-plugin-import": "^2.25.4",
-    "postcss": "^8.4.5",
-    "tailwindcss": "^3.0.18",
-    "vite": "^2.7.2"
-  },
-  "dependencies": {
-    "navigo": "^8.11.1"
-  }
+    "name": "my-app",
+    "version": "0.0.0",
+    "scripts": {
+        "start:server": "json-server --watch db.json --port 3001",
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview"
+    },
+    "devDependencies": {
+        "autoprefixer": "^10.4.2",
+        "eslint": "^8.8.0",
+        "eslint-config-airbnb-base": "^15.0.0",
+        "eslint-plugin-import": "^2.25.4",
+        "postcss": "^8.4.5",
+        "tailwindcss": "^3.0.18",
+        "vite": "^2.7.2"
+    },
+    "dependencies": {
+        "axios": "^0.25.0",
+        "navigo": "^8.11.1"
+    }
 }

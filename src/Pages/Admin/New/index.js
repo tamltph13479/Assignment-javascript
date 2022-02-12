@@ -69,7 +69,33 @@ const NewPage = {
             </tr>
           </thead>
           <tbody class="bg-white divide-y divide-gray-200">
+  
+                
+                <tr>
+              <td class="px-6 py-4 whitespace-nowrap">
+        1
+              </td>
+              <td class="px-6 py-4 whitespace-nowrap">
+               
+        3
+              </td>
+              <td class="px-6 py-4 whitespace-nowrap">
+         2
+              </td>
+              <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 ">
+            1
+              </td>
+              <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                <a href="/admin/news/edit" class="text-indigo-600 hover:text-indigo-900">Sửa</a>
+              </td>
+                 <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                <a href="#" class="text-indigo-600 hover:text-indigo-900">Xóa</a>
+              </td>
+            </tr>
+          
+     
 
+            <!-- More people... -->
           </tbody>
         </table>
       </div>

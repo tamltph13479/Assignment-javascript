@@ -1,7 +1,8 @@
-import data from "../data";
+import { getAll } from "../api/posts";
 
 const content = {
-        render() {
+        async render() {
+            const { data } = await getAll();
             return /* html */ `
             <div class="flex">
                 <div class="grid w-[200px] h-[100%]">
