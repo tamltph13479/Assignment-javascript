@@ -10,6 +10,7 @@ const router = new Navigo("/", { linksSelector: "a" });
 
 const print = async(content, id) => {
     document.getElementById("app").innerHTML = await content.render(id);
+    if (content.afterRender) content.afterRender(id);
 };
 router.on({
     "/": () => print(Homepage),
@@ -20,7 +21,7 @@ router.on({
 
     "/admin/news": () => print(NewPage),
     "/admin/news/add": () => print(AddnewPage),
-    "/admin/news/edit": () => print(Editnews),
+    "/admin/news/:id/edit": ({ data }) => print(Editnews, data.id),
 
 });
 router.resolve();

@@ -1,8 +1,11 @@
 import Navadmin from "../../../Components/Admindashoard/Navadmin";
+import { getAll, remove } from "../../../api/posts";
+import { reRender } from "../../../utils";
 
 const NewPage = {
-    render() {
-        return /* html */ `
+        async render() {
+            const { data } = await getAll();
+            return /* html */ `
            <div class="min-h-full">
              ${Navadmin.render()}
   <header class="bg-white shadow">
@@ -70,28 +73,31 @@ const NewPage = {
           </thead>
           <tbody class="bg-white divide-y divide-gray-200">
   
-                
-                <tr>
+                             ${data.map((post, index) => `
+               <tr>
               <td class="px-6 py-4 whitespace-nowrap">
-        1
+      ${index + 1}
               </td>
               <td class="px-6 py-4 whitespace-nowrap">
                
-        3
+      ${post.title}
               </td>
               <td class="px-6 py-4 whitespace-nowrap">
-         2
+   <img src="${post.img}" alt="" width="30%">
               </td>
               <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 ">
-            1
+           ${post.desc}
               </td>
               <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                <a href="/admin/news/edit" class="text-indigo-600 hover:text-indigo-900">Sửa</a>
+                <a href="/admin/news/${post.id}" class="text-indigo-600 hover:text-indigo-900">Sửa</a>
               </td>
                  <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                <a href="#" class="text-indigo-600 hover:text-indigo-900">Xóa</a>
+                <button data-id="${post.id}" class="btn btn-remove">Remove</button>
               </td>
             </tr>
+
+         `).join("")}
+    
           
      
 
@@ -107,6 +113,20 @@ const NewPage = {
     </div>
   </main>
             `;
+    },
+    afterRender() {
+        const buttons = document.querySelectorAll(".btn");
+        buttons.forEach((btn) => {
+            const { id } = btn.dataset;
+            btn.addEventListener("click", () => {
+                const confirm = window.confirm("Ban muon xoa bai viet");
+                if (confirm) {
+                    remove(id).then(() => {
+                        reRender(NewPage, "#app");
+                    });
+                }
+            });
+        });
     },
 };
 export default NewPage;

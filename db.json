@@ -1,75 +1,22 @@
 {
-    "posts": [{
-            "createdAt": "2022-02-10T13:41:35.394Z",
-            "name": "Ms. Jody Hickle",
-            "title": "German Pinscher",
-            "img": "http://placeimg.com/640/480/people",
-            "desc": "desc 1",
-            "post": "post 1",
-            "id": "1"
-        },
-        {
-            "createdAt": "2022-02-10T22:49:18.537Z",
-            "name": "Ricky Rohan",
-            "title": "Australian Kelpie",
-            "img": "http://placeimg.com/640/480/sports",
-            "desc": "desc 2",
-            "post": "post 2",
-            "id": "2"
-        },
-        {
-            "createdAt": "2022-02-10T23:07:51.284Z",
-            "name": "Monica Jones",
-            "title": "Miniature Schnauzer",
-            "img": "http://placeimg.com/640/480/business",
-            "desc": "desc 3",
-            "post": "post 3",
-            "id": "3"
-        },
-        {
-            "createdAt": "2022-02-10T19:48:29.579Z",
-            "name": "Bessie Gulgowski DVM",
-            "title": "Cavalier King Charles Spaniel",
-            "img": "http://placeimg.com/640/480/technics",
-            "desc": "desc 4",
-            "post": "post 4",
-            "id": "4"
-        },
-        {
-            "createdAt": "2022-02-11T00:33:47.556Z",
-            "name": "Jo Hane",
-            "title": "Peruvian Inca Orchid",
-            "img": "http://placeimg.com/640/480/abstract",
-            "desc": "desc 5",
-            "post": "post 5",
-            "id": "5"
-        },
-        {
-            "createdAt": "2022-02-10T09:54:12.970Z",
-            "name": "Cindy Luettgen",
-            "title": "German Spaniel",
-            "img": "http://placeimg.com/640/480/transport",
-            "desc": "desc 6",
-            "post": "post 6",
-            "id": "6"
-        },
-        {
-            "createdAt": "2022-02-10T09:49:07.204Z",
-            "name": "Jimmie Buckridge",
-            "title": "Trigg Hound",
-            "img": "http://placeimg.com/640/480/abstract",
-            "desc": "desc 7",
-            "post": "post 7",
-            "id": "7"
-        },
-        {
-            "createdAt": "2022-02-10T17:49:01.704Z",
-            "name": "Mr. Elena Huel",
-            "title": "Pug",
-            "img": "http://placeimg.com/640/480/business",
-            "desc": "desc 8",
-            "post": "post 8",
-            "id": "8"
-        }
-    ]
+  "posts": [
+    {
+      "createdAt": "2022-02-10T09:49:07.204Z",
+      "name": "Jimmie Buckridge",
+      "title": "Trigg Hound",
+      "img": "http://placeimg.com/640/480/abstract",
+      "desc": "desc 7",
+      "post": "post 7",
+      "id": "7"
+    },
+    {
+      "createdAt": "2022-02-10T17:49:01.704Z",
+      "name": "Mr. Elena Huel",
+      "title": "Pug",
+      "img": "http://placeimg.com/640/480/business",
+      "desc": "desc 8",
+      "post": "post 8",
+      "id": "8"
+    }
+  ]
 }

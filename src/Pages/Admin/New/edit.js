@@ -1,7 +1,9 @@
+import {get, upload } from "../../../api/posts";
 import Navadmin from "../../../Components/Admindashoard/Navadmin";
 
 const Editnews = {
-    render() {
+    async render(id) {
+        const { data } = await get(id);
         return /* html */ ` <div class="min-h-full">
              ${Navadmin.render()}
  <header class="bg-white shadow">
@@ -48,7 +50,7 @@ const Editnews = {
 <div>
   <div class="md:grid md:grid-cols-3 md:gap-6">
     <div class="mt-5 md:mt-0 md:col-span-2">
-      <form action="#" method="POST">
+      <form action="" method="POST" id="form-edit-post">
         <div class="shadow sm:rounded-md sm:overflow-hidden">
           <div class="px-4 py-5 bg-white space-y-6 sm:p-6">
             <div class="grid grid-cols-3 gap-6">
@@ -56,7 +58,7 @@ const Editnews = {
                <h1> Tiêu đề</h1>
                 <div class="mt-1 flex rounded-md shadow-sm">
            
-                <input type="text" name="email-address" id="email-address" autocomplete="email" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" value="Le The tam1">
+                <input type="text" name="email-address" id="title-post" autocomplete="email" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" value="${data.title}">
           
                 </div>
               </div>
@@ -112,6 +114,19 @@ const Editnews = {
     </div>
   </main>
             `;
+    },
+    afterRender(id) {
+        const formEdit = document.querySelector("#form-edit-post");
+        formEdit.addEventListener("submit", (e) => {
+            e.preventDefault();
+            upload({
+                    id,
+                    title: document.querySelector("#title-post").value,
+
+                })
+                .then((result) => console.log(result.data))
+                .catch((error) => console.log(error));
+        });
     },
 };
 export default Editnews;
