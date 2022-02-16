@@ -1,6 +1,8 @@
+import { reRender } from "../utils/index";
+
 const Headers = {
-    render() {
-        return /* html */ `
+        render() {
+            return /* html */ `
      
             <div class="header-top flex justify-between h-[80px] w-[1200px] m-auto">
                 <figure class="logo pt-5">
@@ -27,12 +29,12 @@ const Headers = {
                 </div>
                 <div class="flex mt-5 text-center">
                     <span class="sm:ml-3">
-    <a href="#">
+    <a href="/singup">
   <button type="button" class="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-[red] hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Sing up </button>
     </a>
     </span>
                     <span class="sm:ml-3">
-    <a href="#">
+    <a href="/singin">
   <button type="button" class="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Sing in</button>
     </a>
     </span>
@@ -56,23 +58,30 @@ const Headers = {
                         </div>
                     </form>
                     <div class="flex mt-5 text-center ">
-                        <div class="cart">
-                            <a href="">
-                                <i class="fas fa-shopping-cart text-white "></i>
-                                <p class="text-white text-xl">Giỏ hàng</p>
-                            </a>
-                        </div>
 
                         <div class="signin pl-5">
-                            <a href="#">
-                                <i class="fas fa-user text-white"></i>
-                                <p class="text-white text-xl">Tài Khoản</p>
-                            </a>
+                              
+          <ul class="flex">
+   ${localStorage.getItem("user") ? `
+                        <li><a class="block px-4 py-3 hover:bg-indigo-500 hover:text-white " id="email"></a></li>
+                        <li><a class="block px-4 py-3 hover:bg-indigo-500 hover:text-white" id="logout">Logout</a></li>
+                    ` : ""}
+                     </ul>
                         </div>
                     </div>
                 </div>
             </div>
 `;
+    },
+    afterRender() {
+        const email = document.querySelector("#email");
+        const logout = document.querySelector("#logout");
+        email.innerHTML = JSON.parse(localStorage.getItem("user")).email;
+
+        logout.addEventListener("click", () => {
+            localStorage.removeItem("user");
+            reRender(Headers, "header");
+        });
     },
 };
 export default Headers;

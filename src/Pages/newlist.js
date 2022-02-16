@@ -285,19 +285,3 @@ const newlist = {
     },
 };
 export default newlist;
-// imgPost.addEventListener("change", (e) => {
-//    const file = e.target.files[0];
-//    const formData = new FormData();
-//    formData.append('file", file);
-//    formData.append("upload_preset", "jkbdphzy");
-//    axios({
-//     url:
-// "https://api.cloudinary.com/v1_1/ecommercer2021/i
-// mage/upload",
-//     method: "POST",
-//     headers: {
-//      "Content-Type": "application/x-www-
-// formendcoded",
-//     }.
-//     data: formData,
-//    }).then((res) => console.log(res.data.secure_url);

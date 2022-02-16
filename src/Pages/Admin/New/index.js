@@ -9,7 +9,7 @@ const NewPage = {
            <div class="min-h-full">
              ${Navadmin.render()}
   <header class="bg-white shadow">
-    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 px" >
 <div class="lg:flex lg:items-center lg:justify-between">
   <div class="flex-1 min-w-0">
     <h2 class="text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:truncate">
@@ -89,7 +89,7 @@ const NewPage = {
            ${post.desc}
               </td>
               <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                <a href="/admin/news/${post.id}" class="text-indigo-600 hover:text-indigo-900">Sửa</a>
+                <a href="/admin/news/${post.id}/edit" class="text-indigo-600 hover:text-indigo-900">Sửa</a>
               </td>
                  <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                 <button data-id="${post.id}" class="btn btn-remove">Remove</button>

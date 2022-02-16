@@ -16,5 +16,8 @@ const Homepage = {
                 </footer>
         `;
     },
+    afterRender() {
+        Headers.afterRender();
+    },
 };
 export default Homepage;

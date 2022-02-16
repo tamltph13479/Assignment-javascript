@@ -1,7 +1,5 @@
-/* eslint-disable no-shadow */
 import axios from "axios";
 import { add } from "../../../api/posts";
-// import { add } from "../../../api/posts";
 import Navadmin from "../../../Components/Admindashoard/Navadmin";
 import { reRender } from "../../../utils";
 import NewPage from "./index";
@@ -109,9 +107,10 @@ const AddnewPage = {
                 img: response.data.url,
                 desc: document.querySelector("#desc-post").value,
 
+            }).then(async(res) => {
+                document.location.href = "/admin/news/";
+                await reRender(NewPage, "#app");
             });
-            document.location.href = "/admin/news/";
-            await reRender(NewPage, "#app");
         });
     },
 };
