@@ -13,7 +13,7 @@ const Headers = {
                 <div>
                     <ul class="w-[800px] mt-5 pl-10 flex ">
                         <li><a class="px-[20px]" href="/">Homepage</a></li>
-                        <li><a class="px-[20px]" href="/">About</a></li>
+                        <li><a class="px-[20px]" href="/product">product</a></li>
                         <li><a class="px-[20px]" href="">Shopping</a></li>
                         <li><a class="px-[20px]" href="">Phone</a></li>
                         <li><a class="px-[20px]" href="">Contact</a></li>
@@ -27,17 +27,22 @@ const Headers = {
                     </li> -->
                     </ul>
                 </div>
-                <div class="flex mt-5 text-center">
-                    <span class="sm:ml-3">
-    <a href="/singup">
-  <button type="button" class="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-[red] hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Sing up </button>
-    </a>
-    </span>
-                    <span class="sm:ml-3">
-    <a href="/singin">
-  <button type="button" class="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Sing in</button>
-    </a>
-    </span>
+                <div class="flex mt-5 text-center checksn">
+                
+                    
+    
+                        <div class="signin pl-5">
+                              
+          <ul class="flex">
+  ${localStorage.getItem("user") ? `
+                        <li><a class="block px-4 py-3 hover:bg-indigo-500 hover:text-white " id="email"></a></li>
+                        <li><a class="block px-4 py-3 hover:bg-indigo-500 hover:text-white" id="logout">Logout</a></li>
+                        
+                          
+                    ` : `<span class=\"sm:ml-3\"><a href=\"/singup\"><button type=\"button\" class=\"inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-[red] hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500\">Sing up </button></a></span> <span class=\"sm:ml-3\"><a href=\"/singin\"><button type=\"button\" class=\"inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500\">Sing in</button></a></span>`}
+                     </ul>
+                    
+                        </div>
                 </div>
 
             </div>
@@ -62,10 +67,7 @@ const Headers = {
                         <div class="signin pl-5">
                               
           <ul class="flex">
-   ${localStorage.getItem("user") ? `
-                        <li><a class="block px-4 py-3 hover:bg-indigo-500 hover:text-white " id="email"></a></li>
-                        <li><a class="block px-4 py-3 hover:bg-indigo-500 hover:text-white" id="logout">Logout</a></li>
-                    ` : ""}
+
                      </ul>
                         </div>
                     </div>
@@ -83,5 +85,6 @@ const Headers = {
             reRender(Headers, "header");
         });
     },
+
 };
 export default Headers;

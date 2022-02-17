@@ -3,7 +3,7 @@
     {
       "id": "8",
       "title": "Le The tamc222111",
-      "img": "http://res.cloudinary.com/ecommercer/image/upload/v1644919279/Anh/idjmawobcipu3o9pnfyr.jpg",
+      "img": "http://res.cloudinary.com/ecommercer/image/upload/v1645021569/Anh/vovk36evgzl3prqyi4mv.jpg",
       "desc": "1234511111"
     },
     {
@@ -17,18 +17,6 @@
       "title": "dasdasdsfsdưeqưeqưe",
       "img": "http://res.cloudinary.com/ecommercer/image/upload/v1644914889/Anh/lxxcayyzhka0qjbkz4dq.jpg",
       "desc": "dfsdfsdfdsfsdfewqewqe"
-    },
-    {
-      "title": "ewqeqw",
-      "img": "http://res.cloudinary.com/ecommercer/image/upload/v1644911689/Anh/puofnsghyor11h58wgn2.jpg",
-      "desc": "qweqweqw",
-      "id": "0KH8Dwz"
-    },
-    {
-      "title": "tam123",
-      "img": "http://res.cloudinary.com/ecommercer/image/upload/v1644912549/Anh/clmuirsppogzxwh9muck.jpg",
-      "desc": "1234",
-      "id": "YPFgUiW"
     }
   ],
   "users": [
@@ -55,18 +43,6 @@
       "password": "$2a$10$FE3zJLIW0LFrulYpLRGrBeOiJofJUWppR/Yww.cz574zUn/kwFtiO",
       "username": "thetam1000",
       "id": 4
-    },
-    {
-      "email": "Thetam10005@gmail.com",
-      "password": "$2a$10$IhX.f99tiOSKl32S4Xz4eOdljD1j2LU/4kdHl9SJAinLv4KNYmk.m",
-      "username": "12345",
-      "id": 5
-    },
-    {
-      "email": "Thetam10000@gmail.com",
-      "password": "$2a$10$vXG8MZqLEAh16YVC.mCPNevifLItgsTvCAYwtGCnj0fd0oOh6U6Ki",
-      "username": "fsdfsd",
-      "id": 6
     }
   ]
 }

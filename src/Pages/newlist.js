@@ -283,5 +283,8 @@ const newlist = {
 
         `;
     },
+    afterRender() {
+        Headers.afterRender();
+    },
 };
 export default newlist;

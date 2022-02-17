@@ -7,6 +7,8 @@ import AddnewPage from "./Pages/Admin/New/add";
 import Editnews from "./Pages/Admin/New/edit";
 import singup from "./Pages/singin";
 import singin from "./Pages/singup";
+import userPage from "./Pages/Admin/user";
+import product from "./Pages/products";
 
 const router = new Navigo("/", { linksSelector: "a" });
 
@@ -14,18 +16,33 @@ const print = async(content, id) => {
     document.getElementById("app").innerHTML = await content.render(id);
     if (content.afterRender) content.afterRender(id);
 };
+router.on("/admin/*", () => {}, {
+    before(done, match) {
+        if (JSON.parse(localStorage.getItem("user"))) {
+            const { id } = JSON.parse(localStorage.getItem("user"));
+            if (id == 1) {
+                done();
+            } else {
+                document.location.href = "/";
+            }
+        } else {
+            document.location.href = "/";
+        }
+    },
+});
 router.on({
     "/": () => print(Homepage),
 
     "/new/:id": ({ data }) => print(newlist, data.id),
-
+    "/singup": () => print(singup),
+    "/singin": () => print(singin),
     "/admin/dashboard": () => print(Dashboard),
 
     "/admin/news": () => print(NewPage),
     "/admin/news/add": () => print(AddnewPage),
     "/admin/news/:id/edit": ({ data }) => print(Editnews, data.id),
-    "/singup": () => print(singup),
-    "/singin": () => print(singin),
+    "/admin/user": () => print(userPage),
+    "/product": () => print(product),
 
 });
 router.resolve();

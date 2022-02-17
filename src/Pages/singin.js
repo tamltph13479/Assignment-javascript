@@ -1,4 +1,6 @@
-import { signin, signup } from "../api/user";
+import toastr from "toastr";
+import { signin } from "../api/user";
+import "toastr/build/toastr.min.css";
 
 const singin = {
     async render() {
@@ -47,14 +49,18 @@ const singin = {
                     email: document.querySelector("#email-address").value,
                     password: document.querySelector("#password").value,
                 });
+
                 localStorage.setItem("user", JSON.stringify(data.user));
-                if (data.user.id == 1) {
-                    document.location.href = "/admin/news";
-                } else {
-                    document.location.href = "/";
-                }
+                toastr.success("dang nhap thanh cong");
+                setTimeout(() => {
+                    if (data.user.id == 1) {
+                        document.location.href = "/admin/news";
+                    } else {
+                        document.location.href = "/";
+                    }
+                }, 2000);
             } catch (error) {
-                console.log(error.response.data);
+                toastr.error(error.response.data);
             }
         });
     },
