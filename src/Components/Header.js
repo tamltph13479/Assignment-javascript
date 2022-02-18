@@ -13,7 +13,7 @@ const Headers = {
                 <div>
                     <ul class="w-[800px] mt-5 pl-10 flex ">
                         <li><a class="px-[20px]" href="/">Homepage</a></li>
-                        <li><a class="px-[20px]" href="/product">product</a></li>
+                        <li><a class="px-[20px]" href="/products">product</a></li>
                         <li><a class="px-[20px]" href="">Shopping</a></li>
                         <li><a class="px-[20px]" href="">Phone</a></li>
                         <li><a class="px-[20px]" href="">Contact</a></li>

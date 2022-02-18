@@ -1,48 +1,66 @@
 {
-  "posts": [
-    {
-      "id": "8",
-      "title": "Le The tamc222111",
-      "img": "http://res.cloudinary.com/ecommercer/image/upload/v1645021569/Anh/vovk36evgzl3prqyi4mv.jpg",
-      "desc": "1234511111"
-    },
-    {
-      "title": "kjkhj",
-      "img": "http://res.cloudinary.com/ecommercer/image/upload/v1644901061/Anh/nqxs2ukjjnzauuogvfqf.jpg",
-      "desc": "jkhjkhj",
-      "id": "OYIKjFV"
-    },
-    {
-      "id": "EqThrKg",
-      "title": "dasdasdsfsdưeqưeqưe",
-      "img": "http://res.cloudinary.com/ecommercer/image/upload/v1644914889/Anh/lxxcayyzhka0qjbkz4dq.jpg",
-      "desc": "dfsdfsdfdsfsdfewqewqe"
-    }
-  ],
-  "users": [
-    {
-      "email": "admin@gmail.com",
-      "password": "$2a$10$OTVFVCKZCCFWdzAmh5mxxexYagEPBaw0v8nR06/MLgQi5nIzTvbkK",
-      "username": "datlt2306",
-      "id": 1
-    },
-    {
-      "email": "Thetam1002@gmail.com",
-      "password": "$2a$10$f3pcTbkq.ro7YP9TMQmNZ.G/o49YPAFgUltca8vX9fsv7rJTjE19O",
-      "username": "fsdfsd",
-      "id": 2
-    },
-    {
-      "email": "Thetam100543453453@gmail.com",
-      "password": "$2a$10$5e8Vix/QbD5E6C.VV816V.oMNBebEptyk3oMOCZBgVPMFuz9Mf4Jm",
-      "username": "fsdfsd",
-      "id": 3
-    },
-    {
-      "email": "Thetam1005@gmail.com",
-      "password": "$2a$10$FE3zJLIW0LFrulYpLRGrBeOiJofJUWppR/Yww.cz574zUn/kwFtiO",
-      "username": "thetam1000",
-      "id": 4
-    }
-  ]
+    "posts": [{
+            "id": 1,
+            "title": "Bai Viet so 1",
+            "image": "http://res.cloudinary.com/ecommercer/image/upload/v1645172281/Anh/d3efx1obluxltexkgard.jpg",
+            "username": "Thetam1002@gmail.com",
+            "introduce": "Tailwind automatically removes all unused CSS when building for production, which means your final CSS bundle is the smallest it could possibly be. In fact, most Tailwind projects ship less than 10kB of CSS to the client.",
+            "content": "This sunny and spacious room is for those traveling light and looking for a comfy and cosy place to lay their head for a night or two. This beach house sits in a vibrant neighborhood littered with cafes, pubs, restaurants and supermarkets and is close to all the major attractions such as Edinburgh Castle and Arthur's Seat.",
+            "day": "22-01-2022"
+        },
+        {
+            "id": 2,
+            "title": "Bai Viet so 2",
+            "image": "http://res.cloudinary.com/ecommercer/image/upload/v1645172281/Anh/d3efx1obluxltexkgard.jpg",
+            "username": "Thetam1002@gmail.com",
+            "introduce": "Tailwind automatically removes all unused CSS when building for production, which means your final CSS bundle is the smallest it could possibly be. In fact, most Tailwind projects ship less than 10kB of CSS to the client.",
+            "content": "This sunny and spacious room is for those traveling light and looking for a comfy and cosy place to lay their head for a night or two. This beach house sits in a vibrant neighborhood littered with cafes, pubs, restaurants and supermarkets and is close to all the major attractions such as Edinburgh Castle and Arthur's Seat.",
+            "day": "22-01-2022"
+        },
+        {
+            "id": 3,
+            "title": "Bai Viet so 3",
+            "image": "http://res.cloudinary.com/ecommercer/image/upload/v1645172281/Anh/d3efx1obluxltexkgard.jpg",
+            "username": "Thetam1002@gmail.com",
+            "introduce": "Tailwind automatically removes all unused CSS when building for production, which means your final CSS bundle is the smallest it could possibly be. In fact, most Tailwind projects ship less than 10kB of CSS to the client.",
+            "content": "This sunny and spacious room is for those traveling light and looking for a comfy and cosy place to lay their head for a night or two. This beach house sits in a vibrant neighborhood littered with cafes, pubs, restaurants and supermarkets and is close to all the major attractions such as Edinburgh Castle and Arthur's Seat.",
+            "day": "22-01-2022"
+        }
+    ],
+    "users": [{
+            "email": "admin@gmail.com",
+            "password": "$2a$10$OTVFVCKZCCFWdzAmh5mxxexYagEPBaw0v8nR06/MLgQi5nIzTvbkK",
+            "username": "datlt2306",
+            "id": 1
+        },
+        {
+            "email": "Thetam1002@gmail.com",
+            "password": "$2a$10$f3pcTbkq.ro7YP9TMQmNZ.G/o49YPAFgUltca8vX9fsv7rJTjE19O",
+            "username": "fsdfsd",
+            "id": 2
+        },
+        {
+            "email": "Thetam100543453453@gmail.com",
+            "password": "$2a$10$5e8Vix/QbD5E6C.VV816V.oMNBebEptyk3oMOCZBgVPMFuz9Mf4Jm",
+            "username": "fsdfsd",
+            "id": 3
+        },
+        {
+            "email": "Thetam1005@gmail.com",
+            "password": "$2a$10$FE3zJLIW0LFrulYpLRGrBeOiJofJUWppR/Yww.cz574zUn/kwFtiO",
+            "username": "thetam1000",
+            "id": 4
+        }
+    ],
+    "products": [{
+            "id": "1",
+            "name": "san pham con",
+            "price": "1000000"
+        },
+        {
+            "id": "2",
+            "name": "san pham con",
+            "price": "1000000"
+        }
+    ]
 }

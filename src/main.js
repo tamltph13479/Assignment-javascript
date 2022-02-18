@@ -9,8 +9,10 @@ import singup from "./Pages/singin";
 import singin from "./Pages/singup";
 import userPage from "./Pages/Admin/user";
 import product from "./Pages/products";
+import detail from "./Pages/products/detail";
+import CartPase from "./Pages/products/cart";
 
-const router = new Navigo("/", { linksSelector: "a" });
+const router = new Navigo("/", { linksSelector: "a", hash: true });
 
 const print = async(content, id) => {
     document.getElementById("app").innerHTML = await content.render(id);
@@ -38,11 +40,13 @@ router.on({
     "/singin": () => print(singin),
     "/admin/dashboard": () => print(Dashboard),
 
-    "/admin/news": () => print(NewPage),
+    "/admin/new": () => print(NewPage),
     "/admin/news/add": () => print(AddnewPage),
     "/admin/news/:id/edit": ({ data }) => print(Editnews, data.id),
     "/admin/user": () => print(userPage),
-    "/product": () => print(product),
+    "/products": () => print(product),
+    "/products/:id": ({ data }) => print(detail, data.id),
+    "/cart": () => print(CartPase),
 
 });
 router.resolve();

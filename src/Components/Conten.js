@@ -140,29 +140,35 @@ const content = {
 
             <div class="conten my-[20px]">
                 <h1 class="font-bold text-[20px] py-[20px]">Recomended For You</h1>
-                <div class="product grid grid-cols-4 gap-5 ">
+                <div class="bg-gray-100">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-2xl mx-auto py-8 sm:py-10 lg:max-w-none">
+  <div class="product grid grid-cols-3 gap-4">
+            
                  ${data.map((post) => `
-                    <form action="">
-                        <div class=" khoiy border-solid border-2 border-[#f3f3f3] rounded-lg  ">
-                            <div class=" w-[100%] ">
-                                <a href="/new/${post.id}"> <img src="${post.img}" alt=""></a>
-                            </div>
-                            <div class="py-[10px] px-[10px] leading-8">
-                                <a href="/new/${post.id}">
-                                    <h4 class="font-bold hover:underline">${post.title}</h4>
-                                </a>
-                                <p class="text-[15px] text-[red]">${post.desc}</p>
-                                <p>130,000,000 lượt xem</p>
-                            </div>
-                            <div class="conten-item ">
-                                <button>Add to cart</button>
-                            </div>
-                        </div>
-                    </form>
+                         <div class="group relative  ">
+          <div class="relative w-full h-80 bg-white rounded-lg overflow-hidden group-hover:opacity-75 sm:aspect-w-2 sm:aspect-h-1 sm:h-64 lg:aspect-w-1 lg:aspect-h-1">
+            <img src="${post.image}" class="w-[100%] h-[100%]">
+          </div>
+          <h3 class="mt-6 text-sm text-gray-500">
+            <a href="/new/${post.id}">
+              <span class="absolute inset-0"></span>
+              ${post.day}
+            </a>
+          </h3>
+          <p class="text-base font-semibold text-gray-900">${post.title}</p>
+                <p class="text-base  text-gray-900">${post.introduce}</p>
+        </div>
 
          `).join("")}
+
+      </div>
+    </div>
+  </div>
+</div>
+      
  
-                </div>
+           
 
 
             </div>

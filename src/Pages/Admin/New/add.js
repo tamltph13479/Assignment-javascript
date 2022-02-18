@@ -1,5 +1,6 @@
 import axios from "axios";
 import { add } from "../../../api/posts";
+import headeradmin from "../../../Components/Admindashoard/Headderadmin";
 import Navadmin from "../../../Components/Admindashoard/Navadmin";
 import { reRender } from "../../../utils";
 import NewPage from "./index";
@@ -7,80 +8,73 @@ import NewPage from "./index";
 const AddnewPage = {
     render() {
         return /* html */ `
-           <div class="min-h-full">
-             ${Navadmin.render()}
-  <header class="bg-white shadow">
-    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
- 
-<div class="lg:flex lg:items-center lg:justify-between">
-  <div class="flex-1 min-w-0">
-    <h2 class="text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:truncate">
-      Back End Developer
-    </h2>
-  </div>
-  <div class="mt-5 flex lg:mt-0 lg:ml-4">
-    <span class="sm:ml-3">
-    <a href="/admin/news">
-  <button type="button" class="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-     Quay lại
+          <div class="flex h-screen bg-gray-50 dark:bg-gray-900" :class="{ 'overflow-hidden': isSideMenuOpen}">
+    <!-- Desktop sidebar -->
+        ${Navadmin.render()}
+    <div class="flex flex-col flex-1 w-full">
+${headeradmin.render()}
+        <main class="h-full overflow-y-auto">
+            <div class="container px-6 mx-auto grid">
+                <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">
+                   Them Bai Viet
+                </h2>
+<div class="mt-5 md:mt-0 md:col-span-2">
+        <form action="#" method="POST">
+          <div class="shadow overflow-hidden sm:rounded-md">
+            <div class="px-4 py-5 bg-white sm:p-6">
+              <div class="grid grid-cols-6 gap-6">
+                <div class="col-span-6 sm:col-span-3">
+                  <label for="first-name" class="block text-sm font-medium text-gray-700">Title</label>
+                 <input type="text" class="h-10 w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md px-[20px]" placeholder="Tieu de bai viet" value="Le the tam">
+                </div>
+                
+
+                <div class="col-span-6 sm:col-span-4">
+                  <label for="email-address" class="block text-sm font-medium text-gray-700">Introduce</label>
+                  <div class="mt-1">
+                  <textarea id="about" name="about" rows="3" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md p-[20px]" ></textarea>
+                </div>
+                </div>
+                       <div class="col-span-6 sm:col-span-4">
+                  <label for="email-address" class="block text-sm font-medium text-gray-700">content</label>
+                <div class="mt-1">
+                  <textarea id="about" name="about" rows="3" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md p-[20px]"></textarea>
+                </div>
+                </div>
+                       <div class="col-span-6 sm:col-span-4">
+                  <label for="email-address" class="block text-sm font-medium text-gray-700">image</label>
+                  <div class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
+                  <div class="space-y-1 text-center">
+             
+                    <div class="flex text-sm text-gray-600">
+                      <label for="file-upload" class="relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">
+                        <input id="file-upload"  type="file" class="">
+                      </label>
+                    </div>
+
+                    </p>
+                  </div>
+                </div>
+                </div>
+              </div>
+            </div>
+            <div class="px-4 py-3 bg-gray-50 text-left sm:px-6">
+        <button type="button" class="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+     Save
       </button>
-    </a>
-    </span>
-
-    <!-- Dropdown -->
-    <span class="ml-3 relative sm:hidden">
-      <button type="button" class="inline-flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" id="mobile-menu-button" aria-expanded="false" aria-haspopup="true">
-        More
-        <!-- Heroicon name: solid/chevron-down -->
-        <svg class="-mr-1 ml-2 h-5 w-5 text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-          <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-        </svg>
-      </button>
-      <div class="origin-top-right absolute right-0 mt-2 -mr-1 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="mobile-menu-button" tabindex="-1">
-        <!-- Active: "bg-gray-100", Not Active: "" -->
-        <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="mobile-menu-item-0">Edit</a>
-        <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="mobile-menu-item-1">View</a>
+            </div>
+          </div>
+        </form>
       </div>
-    </span>
-  </div>
-</div>
-    </div>
-  </header>
-  <main>
-    <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
-      <div class="px-4 py-6 sm:px-0">
-   
-<div>
-  <div class="md:grid md:grid-cols-3 md:gap-6">
-    <div class="mt-5 md:mt-0 md:col-span-2">
-          <form action="" id="form-add-post">
-                    <input type="text" 
-                        placeholder="Tieu de bai viet" 
-                        class="border border-black" 
-                        id="title-post"
-                    > <br />
-                    <input type="file"  
-                        class="border border-black"
-                        id="img-post"
-                    >
-                    <br />
-                    <textarea name="" 
-                            id="desc-post" 
-                            cols="30" 
-                            rows="10" 
-                            class="border border-black"
-                    ></textarea>
-                    <button>Them</button>
-                </form>
 
-    </div>
-  </div>
-</div>
-</div>
-      </div>
-    </div>
-  </main>
 
+
+            </div>
+        </main>
+
+
+
+        
             `;
     },
     afterRender() {

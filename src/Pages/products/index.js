@@ -1,6 +1,7 @@
-import Headers from "../Components/Header";
-import footer from "../Components/Footer";
-import { getAll } from "../api/posts";
+import Headers from "../../Components/Header";
+import footer from "../../Components/Footer";
+import { getAll } from "../../api/products";
+import { $ } from "../../utils/index";
 
 const product = {
         async render() {
@@ -18,17 +19,17 @@ const product = {
                     <form action="">
                         <div class=" khoiy border-solid border-2 border-[#f3f3f3] rounded-lg  ">
                             <div class=" w-[100%] ">
-                                <a href="/new/${post.id}"> <img src="${post.img}" alt=""></a>
+                             
                             </div>
                             <div class="py-[10px] px-[10px] leading-8">
-                                <a href="/new/${post.id}">
-                                    <h4 class="font-bold hover:underline">${post.title}</h4>
+                                <a href="/products/${post.id}">
+                                    <h4 class="font-bold hover:underline">${post.name}</h4>
                                 </a>
-                                <p class="text-[15px] text-[red]">${post.desc}</p>
+                                <p class="text-[15px] text-[red]">${post.price}</p>
                                 <p>130,000,000 lượt xem</p>
                             </div>
                             <div class="conten-item ">
-                                <button>Add to cart</button>
+                                <button id="btnAddToCart">Add to cart</button>
                             </div>
                         </div>
                     </form>
@@ -50,6 +51,9 @@ const product = {
     },
     afterRender() {
         Headers.afterRender();
+        $("#btnAddToCart").addEventListener("click", () => {
+            console.log($("#btnAddToCart"));
+        });
     },
 };
 export default product;
