@@ -1,9 +1,9 @@
 import Navadmin from "../../../Components/Admindashoard/Navadmin";
-import { getAll, remove } from "../../../api/posts";
+import { getAll, remove } from "../../../api/products";
 import { reRender } from "../../../utils";
 import headeradmin from "../../../Components/Admindashoard/Headderadmin";
 
-const NewPage = {
+const productsadmin = {
         async render() {
             const { data } = await getAll();
             return /* html */ `
@@ -33,7 +33,7 @@ ${headeradmin.render()}
     </div>
     <div class="mt-5 flex lg:mt-0 lg:ml-4">
       <span class="sm:ml-3">
-   <a href="/admin/news/add" class="">
+   <a href="/admin/products/add" class="">
         <button type="button" class="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
           Them Moi
         </button>
@@ -67,15 +67,17 @@ ${headeradmin.render()}
           <thead class="bg-gray-50">
             <tr>
               <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">id</th>
-              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Title</th>
-              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">image</th>
-              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">day</th>
-              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"></th>
-                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Active</th>
+              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
+              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Image</th>
+               <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Price</th>
+              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">quantity</th>
+                 <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Details</th>
+              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Active</th>
+              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Active</th>
             </tr>
           </thead>
           <tbody class="bg-white divide-y divide-gray-200">
-            ${data.map((post, index) => `
+            ${data.map((products, index) => `
             <tr>
               <td class="px-6 py-4 whitespace-nowrap">
                 <div class="flex items-center">
@@ -83,24 +85,24 @@ ${headeradmin.render()}
                 </div>
               </td>
               <td class="px-6 py-4 whitespace-nowrap">
-           ${post.title}
+           ${products.name}
               </td>
-              <td class="px-1 py-4 whitespace-nowrap">
-               <img src=" ${post.image}" alt="" class="w-[90px] h-[100px]">
+                    <td class="px-6 py-4 whitespace-nowrap">
+                   <img src="${products.image}" alt="" class="w-[90px] h-[100px]">
               </td>
         
-                <td class="px-1 py-4 whitespace-nowrap text-sm text-gray-500 ">     ${post.day}</td>
+                <td class="px-1 py-4 whitespace-nowrap text-sm text-gray-500 ">      ${products.price}</td>
+                     <td class="px-1 py-4 whitespace-nowrap text-sm text-gray-500 ">      ${products.quantity}</td>
+                          <td class="px-1 py-4 whitespace-nowrap text-sm text-gray-500 ">      ${products.details}</td>
                          <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                <a href="/admin/news/${post.id}/edit" class="text-indigo-600 hover:text-indigo-900">Sửa</a>
+                <a href="/admin/news/${products.id}/edituser" class="text-indigo-600 hover:text-indigo-900">Sửa</a>
               </td>
                  <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                <button data-id="${post.id}" class="btn btn-remove">Remove</button>
+                <button data-id="${products.id}" class="btn btn-remove">Remove</button>
               </td>
        
             </tr>
                 `).join("")}
-
-            <!-- More people... -->
           </tbody>
         </table>
         
@@ -124,11 +126,11 @@ ${headeradmin.render()}
                 const confirm = window.confirm("Ban muon xoa bai viet");
                 if (confirm) {
                     remove(id).then(() => {
-                        reRender(NewPage, "#app");
+                        reRender(productsadmin, "#app");
                     });
                 }
             });
         });
     },
 };
-export default NewPage;
+export default productsadmin;

@@ -16,10 +16,10 @@ const product = {
                 <h1 class="font-bold text-[20px] py-[20px]">Recomended For You</h1>
                 <div class="product grid grid-cols-4 gap-5 ">
                  ${data.map((post) => `
-                    <form action="">
-                        <div class=" khoiy border-solid border-2 border-[#f3f3f3] rounded-lg  ">
+                       <form action="">
+                        <div class=" khoiy border-solid border-2 border-[#f3f3f3] rounded-lg overflow-hidden shadow-lg hover:scale-105 transition duration-500 cursor-pointer ">
                             <div class=" w-[100%] ">
-                             
+                                <a href="/products/${post.id}"> <img src="${post.image}" alt=""></a>
                             </div>
                             <div class="py-[10px] px-[10px] leading-8">
                                 <a href="/products/${post.id}">

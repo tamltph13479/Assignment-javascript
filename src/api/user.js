@@ -13,9 +13,13 @@ export const getAll = () => {
     const url = "/users";
     return instance.get(url);
 };
-export const add = (user) => {
+export const get = (id) => {
+    const url = `/users/${id}`;
+    return instance.get(url);
+};
+export const add = (id) => {
     const url = `/users`;
-    return instance.post(url, user);
+    return instance.post(url, id);
 };
 export const remove = (id) => {
     const url = `/users/${id}`;

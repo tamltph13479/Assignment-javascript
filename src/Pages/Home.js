@@ -11,7 +11,7 @@ const Homepage = {
             <article class=" mx-auto w-[1200px] ">
               ${await content.render()}
         </article>
-                <footer class="  min-w-full m-auto">
+                <footer class="  min-w-full m-auto bg-[#f3f3f3]">
                 ${footer.render()}
                 </footer>
         `;

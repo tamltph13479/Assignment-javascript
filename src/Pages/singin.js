@@ -5,38 +5,92 @@ import "toastr/build/toastr.min.css";
 const singin = {
     async render() {
         return /* html */ `
-<div class="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-  <div class="max-w-md w-full space-y-8">
-    <div>
-      <img class="mx-auto h-12 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg" alt="Workflow">
-      <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">Sign in to your account</h2>
+            <div class="container mx-auto">
+        <div class="flex justify-center px-6 my-12">
+            <!-- Row -->
+            <div class="w-full xl:w-3/4 lg:w-11/12 flex">
+                <!-- Col -->
+                <div class="w-full h-auto bg-gray-400 hidden lg:block lg:w-1/2 bg-cover rounded-l-lg" style="background-image: url('https://thongtinz.com/wp-content/uploads/2020/08/hinh-nen-phong-canh-1.jpg')"></div>
+                <!-- Col -->
+                <div class="w-full lg:w-1/2 bg-white p-5 rounded-lg lg:rounded-l-none">
+                    <h3 class="pt-4 text-2xl text-center">Welcome Back!</h3>
+                              <a href="/"> 
+                            <button class="transition duration-200 mx-5 px-5 py-4 cursor-pointer font-normal text-sm rounded-lg text-gray-500 hover:bg-gray-200 focus:outline-none focus:bg-gray-300 focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50 ring-inset">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-4 h-4 inline-block align-text-top">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                </svg>
+                <span class="inline-block ml-1">Back</span>
+            </button>
+             </a>
+                    <form method="Post" action="" class="mt-10" id="formSignin">
+
+                        <div class="mb-4">
+                            <label class="block text-gray-700 text-sm font-normal mb-2" for="username">
+                Email
+              </label>
+                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="email" v-model="form.email" type="email" required="" autofocus="" placeholder="Email" id="email-address">
+                        </div>
+
+                        <div class="mb-6">
+                            <label class="block text-gray-700 text-sm font-normal mb-2" for="password">
+                Password
+              </label>
+                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" v-model="form.password" type="password" placeholder="Password" name="password" required="" autocomplete="current-password" id="password">
+                        </div>
+                        <div class="mt-7 flex">
+                            <label for="remember_me" class="inline-flex items-center w-full cursor-pointer">
+                                    <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="remember">
+                                    <span class="ml-2 text-sm text-gray-600">
+                                      Remember me
+                                    </span>
+                                </label>
+
+                            <div class="w-full text-right">
+                                <a class="text-blue-500 transition duration-500 ease-in-out  transform hover:-translate-x hover:scale-105" href="#">
+                                       Forgot password
+                                    </a>
+                            </div>
+                        </div>
+
+                        <div class="mt-7">
+                            <button class="bg-blue-500 w-full py-3 rounded-xl text-white shadow-xl hover:shadow-inner focus:outline-none transition duration-500 ease-in-out  transform hover:-translate-x hover:scale-105">
+                                    Login
+                                </button>
+                        </div>
+
+                        <div class="flex mt-7 items-center text-center">
+                            <hr class="border-gray-300 border-1 w-full rounded-md">
+                            <label class="block font-medium text-sm text-gray-600 w-full">
+                                    Accede con
+                                </label>
+                            <hr class="border-gray-300 border-1 w-full rounded-md">
+                        </div>
+
+                        <div class="flex mt-7 justify-center w-full">
+                            <button class="mr-5 bg-blue-500 border-none px-4 py-2 rounded-xl cursor-pointer text-white shadow-xl hover:shadow-inner transition duration-500 ease-in-out  transform hover:-translate-x hover:scale-105">
+                                    
+                                    Facebook
+                                </button>
+
+                            <button class="bg-red-500 border-none px-4 py-2 rounded-xl cursor-pointer text-white shadow-xl hover:shadow-inner transition duration-500 ease-in-out  transform hover:-translate-x hover:scale-105">
+                                    
+                                    Google
+                                </button>
+                        </div>
+
+                        <div class="mt-7">
+                            <div class="flex justify-center items-center">
+
+                                <a href="/singup" class=" text-blue-500 transition duration-500 ease-in-out  transform hover:-translate-x hover:scale-105">
+                                       Not registered yet? Create an Account
+                                    </a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
-    <form class="mt-8 space-y-6"  method="POST" id="formSignin">
-      <input type="hidden" name="remember" value="true">
-      <div class="rounded-md shadow-sm -space-y-px">
-        <div>
-          <label for="email-address" class="sr-only">Email address</label>
-          <input id="email-address" name="email" type="email" autocomplete="email" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Email address">
-        </div>
-        <div>
-          <label for="password" class="sr-only">Password</label>
-          <input id="password" name="password" type="password" autocomplete="current-password" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Password">
-        </div>
-      </div>
-      <div>
-        <button type="submit" class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-          <span class="absolute left-0 inset-y-0 flex items-center pl-3">
-            <!-- Heroicon name: solid/lock-closed -->
-            <svg class="h-5 w-5 text-indigo-500 group-hover:text-indigo-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-              <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" />
-            </svg>
-          </span>
-          Sign in
-        </button>
-      </div>
-    </form>
-  </div>
-</div>
         `;
     },
     afterRender() {
