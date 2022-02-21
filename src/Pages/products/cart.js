@@ -66,7 +66,7 @@ const CartPage = {
                                     <button data-id="${item.id}" class="bg-[red] text-white btn btn-remove mr-2 px-2">Xóa</button>
                                     
                             </td>
-                                <p>${tong += item.price * item.quantity}</p>
+                                <p hidden>${tong += item.price * item.quantity}</p>
                         </tr>
                             `).join("")}
                     </tbody>

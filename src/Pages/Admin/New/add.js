@@ -35,13 +35,13 @@ ${headeradmin.render()}
                 <div class="col-span-6 sm:col-span-4">
                   <label class="block text-sm font-medium text-gray-700">Introduce</label>
                   <div class="mt-1">
-                  <textarea id="introduce-post" rows="3" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md p-[20px]" ></textarea>
+                  <textarea id="introduce-post" rows="3" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md p-[20px]" name="title-post2" ></textarea>
                 </div>
                 </div>
                        <div class="col-span-6 sm:col-span-4">
                   <label class="block text-sm font-medium text-gray-700">content</label>
                 <div class="mt-1">
-                  <textarea id="content-post" name="about" rows="3" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md p-[20px]"></textarea>
+                  <textarea id="content-post" name="about" rows="3" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md p-[20px]" name="title-post"></textarea>
                 </div>
                 </div>
                        <div class="col-span-6 sm:col-span-4">
@@ -100,6 +100,18 @@ ${headeradmin.render()}
                 "title-post": {
                     required: "Không được để trống trường này!",
                     minlength: "Nhập ít nhất 5 ký tự anh ei",
+                },
+            },
+            rules2: {
+                "title-post2": {
+                    required: true,
+                    minlength: 100,
+                },
+            },
+            messages2: {
+                "title-post2": {
+                    required: "Không được để trống trường này!",
+                    minlength: "Nhập ít nhất 15 ký tự",
                 },
             },
             submitHandler() {
