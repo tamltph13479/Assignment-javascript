@@ -77,11 +77,29 @@
   ],
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "email": "thetam1998@gmail.com",
       "password": "$2a$10$Q8iACh8ZkEi3I/9j2Wc/mOkjCFpmSXkQB2cWPz9qb2uytErnA5u1K",
       "username": "Le The Tam",
       "image": "http://res.cloudinary.com/ecommercer/image/upload/v1645366875/Anh/eybsde9yduas0keyhbzi.png"
+    },
+    {
+      "email": "thetam1999@gmail.com",
+      "password": "$2a$10$aSr5DD5BlLHqGyLUYs5Dt.uhmdqS41hX/Fk0UojTut15b2ZQ28Gv2",
+      "username": "eqwrwe",
+      "id": "2"
+    },
+    {
+      "email": "thetam19900@gmail.com",
+      "password": "$2a$10$OrSEt0FXVObE9hPBH4zty.dfv4Gg1EL1/0scXxhtz1thTuTSo77TG",
+      "username": "dsadas",
+      "id": "HSnZxsH"
+    },
+    {
+      "email": "thetam19984234@gmail.com",
+      "password": "$2a$10$JnNartibVYxmyDtQSYGMs.8SU.Pkcr61M202ZNPJgbzBRqd/w/PSu",
+      "username": "dsadas",
+      "id": "8-WgNLl"
     }
   ],
   "products": [
@@ -99,7 +117,7 @@
       "price": "200",
       "quantity": "100",
       "details": "La San pham tot tren moi phuong dien",
-      "id": "4Ks5BYQ"
+      "id": "2"
     },
     {
       "name": "fdsffsdfsd",
@@ -107,7 +125,7 @@
       "price": "fdsfsd",
       "quantity": "fsdfsdf",
       "details": "sdfsdfsd",
-      "id": "u3fCnG_"
+      "id": "3"
     }
   ]
 }

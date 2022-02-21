@@ -6,12 +6,14 @@ import { reRender } from "../../utils";
 import { decreaseQuantity, increaseQuantity, removeItemInCart } from "../../utils/cart";
 
 const CartPage = {
+
         render() {
             let cart = [];
+            let tong = 0;
             if (localStorage.getItem("cart")) {
                 cart = JSON.parse(localStorage.getItem("cart"));
             }
-            return `
+            return /* html */ `
                 <header>
         ${Headers.render()}
         </header> 
@@ -33,7 +35,7 @@ const CartPage = {
                         </tr>
                     </thead>
                     <tbody>
-                      ${cart.map((item) => `
+                      ${cart.map((item) => /* html */ `
                         <tr>
                             <td class="hidden pb-4 md:table-cell">
                                 <a href="#">
@@ -49,22 +51,24 @@ const CartPage = {
                                 <div class="w-20 h-10">
                                     <div class="relative flex flex-row w-full h-8">
                                         <input type="number" value="${item.quantity}" class="w-full font-semibold text-center text-gray-700 bg-gray-200 outline-none focus:outline-none hover:text-black focus:text-black" />
-            
+
                                     </div>
                                 </div>
                             </td>
                             <td class="hidden text-right md:table-cell">
                                 <span class="text-sm lg:text-base font-medium">
-             ${item.price}
-              </span>
+                        ${item.price}
+                        </span>
                             </td>
                             <td class="text-right">
                                                     <button data-id="${item.id}" class="bg-green-500 text-white btn btn-increase mr-2 px-2">Tăng</button>
                                 <button data-id="${item.id}" class="bg-orange-500 text-white btn btn-decrease mr-2 px-2">Giảm</button>
-                                   <button data-id="${item.id}" class="bg-[red] text-white btn btn-remove mr-2 px-2">Xóa</button>
+                                    <button data-id="${item.id}" class="bg-[red] text-white btn btn-remove mr-2 px-2">Xóa</button>
+                                    
                             </td>
+                                <p>${tong += item.price * item.quantity}</p>
                         </tr>
-                           `).join("")}
+                            `).join("")}
                     </tbody>
 
                 </table>
@@ -82,7 +86,7 @@ const CartPage = {
                                     Tong Tien
                                 </div>
                                 <div class="lg:px-4 lg:py-2 m-2 lg:text-lg font-bold text-center text-gray-900">
-                                    148,827.53€
+                                  ${tong}
                                 </div>
                             </div>
 

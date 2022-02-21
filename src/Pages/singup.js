@@ -94,7 +94,7 @@ const singup = {
                 email: document.querySelector("#email-address").value,
                 password: document.querySelector("#password").value,
             }).then(async(res) => {
-                document.location.href = "/#/singin";
+                document.location.href = "/singin";
                 await reRender(Homepage, "#app");
             });
         });
