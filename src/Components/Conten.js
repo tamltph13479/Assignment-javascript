@@ -8,7 +8,7 @@ const content = {
             return /* html */ `
             <div class="flex">
                 <div class="grid w-[200px] h-[100%]">      
-            ${navcatory.render()}
+            ${await navcatory.render()}
                 </div>
                 <div class="banner bg-[white] w-[1000px] scroll-mb-[10px]">
                     <img style="" id='anh' src='https://nguyenlam.com/wp-content/uploads/2021/04/Banner-Consumer_690x300.jpg' alt="" width='97%'><br>
@@ -47,7 +47,7 @@ const content = {
             </div>
             <div class="conten my-[20px]">
                 <h1 class="font-bold text-[20px] py-[20px]">New Arrivals</h1>
-                ${producthome.render()}
+                ${await producthome.render()}
                 <div>
                     <div class="banner2 my-[30px]">
                         <img src="https://rafcart.rslahmed.com/assets/images/offer-3.jpg" alt="">

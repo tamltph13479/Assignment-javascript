@@ -102,18 +102,6 @@ ${headeradmin.render()}
                     minlength: "Nhập ít nhất 5 ký tự anh ei",
                 },
             },
-            rules2: {
-                "title-post2": {
-                    required: true,
-                    minlength: 100,
-                },
-            },
-            messages2: {
-                "title-post2": {
-                    required: "Không được để trống trường này!",
-                    minlength: "Nhập ít nhất 15 ký tự",
-                },
-            },
             submitHandler() {
                 async function addProduct() {
                     const file = imgPost.files[0];
