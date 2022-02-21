@@ -2,7 +2,7 @@ import Navigo from "navigo";
 import Homepage from "./Pages/Home";
 import Dashboard from "./Pages/Admin/dashboard";
 import NewPage from "./Pages/Admin/New/index";
-import newlist from "./Pages/newlist";
+import newlist from "./Pages/blog/newlist";
 import AddnewPage from "./Pages/Admin/New/add";
 import Editnews from "./Pages/Admin/New/edit";
 import singup from "./Pages/singup";
@@ -14,6 +14,12 @@ import AddnewUser from "./Pages/Admin/user/add";
 import Editnewsuser from "./Pages/Admin/user/edit";
 import users from "./Pages/Admin/user";
 import productsadmin from "./Pages/Admin/Products";
+import Addproducts from "./Pages/Admin/Products/add";
+import Editproduct from "./Pages/Admin/Products/edit";
+import Category from "./Pages/Admin/category";
+import Addcategory from "./Pages/Admin/category/add";
+import Editcategory from "./Pages/Admin/category/edit";
+import blog from "./Pages/blog/index";
 
 const router = new Navigo("/", { linksSelector: "a", hash: true });
 
@@ -38,7 +44,7 @@ router.on("/admin/*", () => {}, {
 router.on({
     // homePase
     "/": () => print(Homepage),
-
+    "/blog": () => print(blog),
     "/new/:id": ({ data }) => print(newlist, data.id),
     "/singup": () => print(singup),
     "/singin": () => print(singin),
@@ -57,8 +63,12 @@ router.on({
     "/admin/news/:id/edituser": ({ data }) => print(Editnewsuser, data.id),
     // add products
     "/admin/products": () => print(productsadmin),
-    "/admin/products/add": () => print(AddnewUser),
-    "/admin/products/:id/edit": ({ data }) => print(Editnewsuser, data.id),
+    "/admin/products/add": () => print(Addproducts),
+    "/admin/products/:id/edit": ({ data }) => print(Editproduct, data.id),
+    // add category
+    "/admin/category": () => print(Category),
+    "/admin/category/add": () => print(Addcategory),
+    "/admin/category/:id/edit": ({ data }) => print(Editcategory, data.id),
 
 });
 router.resolve();

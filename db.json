@@ -1,12 +1,46 @@
 {
+  "categorys": [
+    {
+      "id": 3,
+      "name": "Di Động 2"
+    },
+    {
+      "name": "Máy Tính",
+      "id": 4
+    },
+    {
+      "name": "Laptop Gaming",
+      "id": 5
+    },
+    {
+      "name": "Iphone",
+      "id": 6
+    },
+    {
+      "name": "PC Gaming",
+      "id": 7
+    },
+    {
+      "name": "Đồ Họa PC",
+      "id": 8
+    },
+    {
+      "name": "Đèn collor",
+      "id": 9
+    },
+    {
+      "name": "Đồ Chơi",
+      "id": 10
+    }
+  ],
   "posts": [
     {
       "id": 1,
-      "title": "Bai Viet so 122222",
-      "image": "http://res.cloudinary.com/ecommercer/image/upload/v1645197911/Anh/isblngjlplm7ih1lvltk.jpg",
-      "introduce": "    Tailwind automatically removes all unused CSS when building for production, which means your final CSS bundle is the smallest it could possibly be. In fact, most Tailwind projects ship less than 10kB of CSS to the client.22222",
-      "content": "This sunny and spacious room is for those traveling light and looking for a comfy and cosy place to lay their head for a night or two. This beach house sits in a vibrant neighborhood littered with cafes, pubs, restaurants and supermarkets and is close to all the major attractions such as Edinburgh Castle and Arthur's Seat.22222",
-      "day": "18-02-2022"
+      "title": "Bai Viet so 12",
+      "image": "http://res.cloudinary.com/ecommercer/image/upload/v1645341849/Anh/k8hjy46wk1wap1xezsj1.png",
+      "introduce": "      Tailwind automatically removes all unused CSS when building for production, which means your final CSS bundle is the smallest it could possibly be. In fact, most Tailwind projects ship less than 10kB of CSS to the client.12",
+      "content": "This sunny and spacious room is for those traveling light and looking for a comfy and cosy place to lay their head for a night or two. This beach house sits in a vibrant neighborhood littered with cafes, pubs, restaurants and supermarkets and is close to all the major attractions such as Edinburgh Castle and Arthur's Seat.12",
+      "day": "20-02-2022"
     },
     {
       "id": 2,
@@ -17,21 +51,28 @@
       "day": "18-02-2022"
     },
     {
-      "id": 3,
-      "title": "Bai Viet so 3",
-      "image": "http://res.cloudinary.com/ecommercer/image/upload/v1645172281/Anh/d3efx1obluxltexkgard.jpg",
-      "username": "Thetam1002@gmail.com",
-      "introduce": "Tailwind automatically removes all unused CSS when building for production, which means your final CSS bundle is the smallest it could possibly be. In fact, most Tailwind projects ship less than 10kB of CSS to the client.",
-      "content": "This sunny and spacious room is for those traveling light and looking for a comfy and cosy place to lay their head for a night or two. This beach house sits in a vibrant neighborhood littered with cafes, pubs, restaurants and supermarkets and is close to all the major attractions such as Edinburgh Castle and Arthur's Seat.",
-      "day": "22-01-2022"
+      "id": 4,
+      "title": "Bai Viet so 20222",
+      "image": "http://res.cloudinary.com/ecommercer/image/upload/v1645341863/Anh/gmqesw3njmszlgmdemry.png",
+      "introduce": " 1eweqw",
+      "content": "ewqeqw",
+      "day": "20-02-2022"
     },
     {
-      "title": "Bai Viet so 20222",
-      "image": "http://res.cloudinary.com/ecommercer/image/upload/v1645197895/Anh/ju93vbiypafwbrpsxs69.jpg",
-      "introduce": "1eweqw",
-      "content": "ewqeqw",
-      "day": "18-02-2022",
-      "id": 4
+      "title": "đâsd",
+      "image": "http://res.cloudinary.com/ecommercer/image/upload/v1645342145/Anh/dozumyat9ggjpdwzp9bp.png",
+      "introduce": "sadasdas",
+      "content": "ádasd",
+      "day": "20-02-2022",
+      "id": 5
+    },
+    {
+      "id": 6,
+      "title": "đâsdasđá",
+      "image": "http://res.cloudinary.com/ecommercer/image/upload/v1645371463/Anh/xpworicltuqjnlu6ifsj.png",
+      "introduce": " ádasdassadas",
+      "content": "sadasdasdsada",
+      "day": "20-02-2022"
     }
   ],
   "users": [
@@ -40,24 +81,33 @@
       "email": "thetam1998@gmail.com",
       "password": "$2a$10$Q8iACh8ZkEi3I/9j2Wc/mOkjCFpmSXkQB2cWPz9qb2uytErnA5u1K",
       "username": "Le The Tam",
-      "image": "http://res.cloudinary.com/ecommercer/image/upload/v1645260685/Anh/amef1g0i3v5rlfthoqp9.jpg"
-    },
-    {
-      "email": "Thetam1002@gmail.com",
-      "password": "$2a$10$f3pcTbkq.ro7YP9TMQmNZ.G/o49YPAFgUltca8vX9fsv7rJTjE19O",
-      "username": "fsdfsd",
-      "image": "http://res.cloudinary.com/ecommercer/image/upload/v1645197895/Anh/ju93vbiypafwbrpsxs69.jpg",
-      "id": 2
+      "image": "http://res.cloudinary.com/ecommercer/image/upload/v1645366875/Anh/eybsde9yduas0keyhbzi.png"
     }
   ],
   "products": [
     {
       "id": "1",
-      "name": "san pham con 1",
-      "image": "http://res.cloudinary.com/ecommercer/image/upload/v1645197895/Anh/ju93vbiypafwbrpsxs69.jpg",
-      "price": "1000000",
+      "name": "san pham con 10000000001",
+      "image": "http://res.cloudinary.com/ecommercer/image/upload/v1645367381/Anh/ietdwvhmflcuzbnmep1z.png",
+      "price": "10000001",
+      "quantity": "10000001",
+      "details": "    Hàng Loai 10000 chat lượng cao so mot viet nam1"
+    },
+    {
+      "name": "San Pham 2",
+      "image": "http://res.cloudinary.com/ecommercer/image/upload/v1645276168/Anh/kx8tdsw4pkcxhgzyvxo1.jpg",
+      "price": "200",
       "quantity": "100",
-      "details": "Hàng Loai 1 chat lượng cao"
+      "details": "La San pham tot tren moi phuong dien",
+      "id": "4Ks5BYQ"
+    },
+    {
+      "name": "fdsffsdfsd",
+      "image": "http://res.cloudinary.com/ecommercer/image/upload/v1645367166/Anh/znyqq38dmalvn1ee2dos.png",
+      "price": "fdsfsd",
+      "quantity": "fsdfsdf",
+      "details": "sdfsdfsd",
+      "id": "u3fCnG_"
     }
   ]
 }

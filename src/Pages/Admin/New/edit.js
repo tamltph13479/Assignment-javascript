@@ -1,10 +1,12 @@
 import axios from "axios";
 import moment from "moment";
+import $ from "jquery";
+import validate from "jquery-validation";
 import {get, upload } from "../../../api/posts";
 import Navadmin from "../../../Components/Admindashoard/Navadmin";
-import NewPage from "./index";
-import { reRender } from "../../../utils";
 import headeradmin from "../../../Components/Admindashoard/Headderadmin";
+import NewPage from ".";
+import { reRender } from "../../../utils";
 
 const Editnews = {
     async render(id) {
@@ -21,7 +23,7 @@ ${headeradmin.render()}
                    Them Bai Viet
                 </h2>
 <div class="mt-5 md:mt-0 md:col-span-2">
-       <form action="" id="form-edit-post">
+       <form action="" id="form-edit">
           <div class="shadow overflow-hidden sm:rounded-md">
             <div class="px-4 py-5 bg-white sm:p-6">
               <div class="grid grid-cols-6 gap-6">
@@ -49,8 +51,9 @@ ${headeradmin.render()}
                   <div class="space-y-1 text-center">
              
                     <div class="flex text-sm text-gray-600">
-                        <input id="img-post"  type="file" class="" value="${data.image}">
+                        <input id="img-post"  type="file" class="" value="">
                       </label>
+                         <div><img width="200" src="${data.image}" id="img-preview" /></div>
                     </div>
 
                     </p>
@@ -77,37 +80,61 @@ ${headeradmin.render()}
             `;
     },
     afterRender(id) {
-        const formEdit = document.querySelector("#form-edit-post");
-
+        const formAdd = $("#form-edit");
         const imgPost = document.querySelector("#img-post");
-
+        const imgPreview = document.querySelector("#img-preview");
         const CLOUDINARY_API = "https://api.cloudinary.com/v1_1/ecommercer/image/upload";
         const CLOUDINARY_PRESET = "veaztpu6";
-
-        formEdit.addEventListener("submit", async(e) => {
-            e.preventDefault();
-            const file = imgPost.files[0];
-            const formData = new FormData();
-            formData.append("file", file);
-            formData.append("upload_preset", CLOUDINARY_PRESET);
-
-            const response = await axios.post(CLOUDINARY_API, formData, {
-                headers: {
-                    "Content-type": "application/formData",
+        let imgLink = "";
+        // preview image when upload
+        imgPost.addEventListener("change", async(e) => {
+            imgPreview.src = URL.createObjectURL(e.target.files[0]);
+        });
+        formAdd.validate({
+            rules: {
+                "title-post": {
+                    required: true,
+                    minlength: 5,
                 },
-            });
-            upload({
-                id,
-                title: document.querySelector("#title-post").value,
-                image: response.data.url,
-                introduce: document.querySelector("#introduce-post").value,
-                content: document.querySelector("#content-post").value,
-                day: moment(new Date()).format("DD-MM-YYYY"),
+            },
+            messages: {
+                "title-post": {
+                    required: "Không được để trống trường này!",
+                    minlength: "Nhập ít nhất 5 ký tự",
+                },
+            },
+            submitHandler() {
+                async function addProduct() {
+                    const file = imgPost.files[0];
+                    if (file) {
+                        const formData = new FormData();
+                        formData.append("file", file);
+                        formData.append("upload_preset", CLOUDINARY_PRESET);
 
-            }).then(async(res) => {
-                document.location.href = "/admin/news";
-                await reRender(NewPage, "#app");
-            });
+                        // call api cloudinary
+
+                        const { data } = await axios.post(CLOUDINARY_API, formData, {
+                            headers: {
+                                "Content-Type": "application/form-data",
+                            },
+                        });
+                        imgLink = data.url;
+                    }
+                    upload({
+                        id,
+                        title: document.querySelector("#title-post").value,
+                        image: imgLink || imgPreview.src,
+                        introduce: document.querySelector("#introduce-post").value,
+                        content: document.querySelector("#content-post").value,
+                        day: moment(new Date()).format("DD-MM-YYYY"),
+                    }).then(async(res) => {
+                        document.location.href = "/#/admin/news";
+                        await reRender(NewPage, "#app");
+                    });
+                }
+
+                addProduct();
+            },
         });
     },
 };

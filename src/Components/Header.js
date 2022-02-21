@@ -11,20 +11,12 @@ const Headers = {
                     </a>
                 </figure>
                 <div>
-                    <ul class="w-[800px] mt-5 pl-10 flex ">
-                        <li><a class="px-[20px]" href="/">Homepage</a></li>
-                        <li><a class="px-[20px]" href="/products">product</a></li>
-                        <li><a class="px-[20px]" href="">Shopping</a></li>
-                        <li><a class="px-[20px]" href="">Phone</a></li>
+                    <ul class="w-[700px] mt-5 pl-10 flex ">
+                        <li><a class="px-[20px]" href="/#/">Homepage</a></li>
+                        <li><a class="px-[20px]" href="/#/products">Product</a></li>
+                        <li><a class="px-[20px]" href="/#/blog">Blog</a></li>
+                        <li><a class="px-[20px]" href="/#/">Phone</a></li>
                         <li><a class="px-[20px]" href="">Contact</a></li>
-                        <!-- <li class="px-[20px]">
-                        <a href="#">Home <span><i class="las la-angle-down"></i></span></a>
-                        <ul class="subnav">
-                            <li><a href="index-1.html">Home page 1 </a></li>
-                            <li><a href="index-2.html">Home page 2</a></li>
-                            <li><a href="index-3.html">Home page 3</a></li>
-                        </ul>
-                    </li> -->
                     </ul>
                 </div>
                 <div class="flex mt-5 text-center checksn">
@@ -35,11 +27,12 @@ const Headers = {
                               
           <ul class="flex">
   ${localStorage.getItem("user") ? `
-                        <li><a class="block px-4 py-3 hover:bg-indigo-500 hover:text-white " id="email"></a></li>
-                        <li><a class="block px-4 py-3 hover:bg-indigo-500 hover:text-white" id="logout">Logout</a></li>
+                        <a class="block px-4 py-3 " id="email"></a>
+                        <button class="ml-[10px] inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-[red] hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"><a" id="logout">Logout</a> </button>
+               <a href="/#/admin/dashboard" >           <button  class=" ml-[10px] inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-[red] hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Dashboard </button></a>
                         
                           
-                    ` : `<span class=\"sm:ml-3\"><a href=\"/singup\"><button type=\"button\" class=\"inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-[red] hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500\">Sing up </button></a></span> <span class=\"sm:ml-3\"><a href=\"/singin\"><button type=\"button\" class=\"inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500\">Sing in</button></a></span>`}
+                    ` : `<span class=\"sm:ml-3\"><a href=\"/#/singup\"><button type=\"button\" class=\"inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-[red] hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500\">Sing up </button></a></span> <span class=\"sm:ml-3\"><a href=\"/#/singin\"><button type=\"button\" class=\"inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500\">Sing in</button></a></span>`}
                      </ul>
                     
                         </div>
@@ -67,7 +60,7 @@ const Headers = {
                         <div class="signin pl-5">
                               
           <ul class="flex">
-
+                             <a href="/cart">   <button class="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-[blue] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" >Gio Hàng </button></a>
                      </ul>
                         </div>
                     </div>

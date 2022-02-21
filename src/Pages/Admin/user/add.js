@@ -1,4 +1,6 @@
 import axios from "axios";
+import $ from "jquery";
+import validate from "jquery-validation";
 import users from "./index";
 import { add } from "../../../api/user";
 import headeradmin from "../../../Components/Admindashoard/Headderadmin";
@@ -19,26 +21,26 @@ ${headeradmin.render()}
                    Them Tai Khoan
                 </h2>
 <div class="mt-5 md:mt-0 md:col-span-2 w-[800px]">
-        <form method="Post" action="" class="mt-10" id="formSignup">
+        <form method="Post" action="" class="mt-10" id="form-add">
                               <div class="mb-4">
                             <label class="block text-gray-700 text-sm font-normal mb-2" for="username">
                 Username
               </label>
-                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"  required="" autofocus="" placeholder="User name" id="username">
+                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"  autofocus="" placeholder="User name" id="username" name="title-post">
                         </div>
 
                         <div class="mb-4">
                             <label class="block text-gray-700 text-sm font-normal mb-2" for="username">
                 Email
               </label>
-                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="email" v-model="form.email" type="email" required="" autofocus="" placeholder="Email" id="email-address">
+                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="email" v-model="form.email" type="email"  autofocus="" placeholder="Email" id="email-address">
                         </div>
 
                         <div class="mb-6">
                             <label class="block text-gray-700 text-sm font-normal mb-2" for="password">
                 Password
               </label>
-                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" v-model="form.password" type="password" placeholder="Password" name="password" required="" autocomplete="current-password" id="password">
+                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" v-model="form.password" type="password" placeholder="Password" name="password" autocomplete="current-password" id="password">
                         </div>
                         <div class="col-span-6 sm:col-span-4">
                   <label class="block text-sm font-medium text-gray-700">image</label>
@@ -47,7 +49,7 @@ ${headeradmin.render()}
              
                     <div class="flex text-sm text-gray-600">
                         <input id="img-post" type="file" class="">
-                      
+                      <div><img width="200" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/832px-No-Image-Placeholder.svg.png" id="previewImage" /></div>
                     </div>
 
                     <p></p>
@@ -82,35 +84,61 @@ ${headeradmin.render()}
             `;
     },
     afterRender() {
-        const formAdd = document.querySelector("#formSignup");
+        const formAdd = $("#form-add");
         const imgPost = document.querySelector("#img-post");
-
+        const imgPreview = document.querySelector("#previewImage");
         const CLOUDINARY_API = "https://api.cloudinary.com/v1_1/ecommercer/image/upload";
         const CLOUDINARY_PRESET = "veaztpu6";
-
-        formAdd.addEventListener("submit", async(e) => {
-            e.preventDefault();
-            const file = imgPost.files[0];
-            const formData = new FormData();
-            formData.append("file", file);
-            formData.append("upload_preset", CLOUDINARY_PRESET);
-
-            const response = await axios.post(CLOUDINARY_API, formData, {
-                headers: {
-                    "Content-type": "application/formData",
+        let imgLink = "";
+        // preview image when upload
+        imgPost.addEventListener("change", async(e) => {
+            imgPreview.src = URL.createObjectURL(e.target.files[0]);
+        });
+        formAdd.validate({
+            rules: {
+                "title-post": {
+                    required: true,
+                    minlength: 5,
                 },
-            });
-            add({
+            },
+            messages: {
+                "title-post": {
+                    required: "Không được để trống trường này!",
+                    minlength: "Nhập ít nhất 5 ký tự anh ei",
+                },
+            },
+            submitHandler() {
+                async function addProduct() {
+                    const file = imgPost.files[0];
+                    if (file) {
+                        const formData = new FormData();
+                        formData.append("file", file);
+                        formData.append("upload_preset", CLOUDINARY_PRESET);
 
-                email: document.querySelector("#email-address").value,
-                password: document.querySelector("#password").value,
-                username: document.querySelector("#username").value,
-                image: response.data.url,
+                        // call api cloudinary
 
-            }).then(async(res) => {
-                document.location.href = "/admin/user";
-                await reRender(users, "#app");
-            });
+                        const { data } = await axios.post(CLOUDINARY_API, formData, {
+                            headers: {
+                                "Content-Type": "application/form-data",
+                            },
+                        });
+                        imgLink = data.url;
+                    }
+                    add({
+
+                        email: document.querySelector("#email-address").value,
+                        password: document.querySelector("#password").value,
+                        username: document.querySelector("#username").value,
+                        image: imgLink || "",
+
+                    }).then(async(res) => {
+                        document.location.href = "/#/admin/user";
+                        await reRender(users, "#app");
+                    });
+                }
+
+                addProduct();
+            },
         });
     },
 };

@@ -1,9 +1,9 @@
 import Navadmin from "../../../Components/Admindashoard/Navadmin";
-import { getAll, remove } from "../../../api/posts";
+import { getAll, remove } from "../../../api/category";
 import { reRender } from "../../../utils";
 import headeradmin from "../../../Components/Admindashoard/Headderadmin";
 
-const NewPage = {
+const Category = {
         async render() {
             const { data } = await getAll();
             return /* html */ `
@@ -33,7 +33,7 @@ ${headeradmin.render()}
     </div>
     <div class="mt-5 flex lg:mt-0 lg:ml-4">
       <span class="sm:ml-3">
-   <a href="/#/admin/news/add" class="">
+   <a href="/#/admin/category/add" class="">
         <button type="button" class="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
           Them Moi
         </button>
@@ -68,14 +68,13 @@ ${headeradmin.render()}
             <tr>
               <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">id</th>
               <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Title</th>
-              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">image</th>
-              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">day</th>
-              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"></th>
-                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Active</th>
+                 <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"></th>
+                           <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Active</th>
+  
             </tr>
           </thead>
           <tbody class="bg-white divide-y divide-gray-200">
-            ${data.map((post, index) => `
+            ${data.map((category, index) => `
             <tr>
               <td class="px-6 py-4 whitespace-nowrap">
                 <div class="flex items-center">
@@ -83,18 +82,13 @@ ${headeradmin.render()}
                 </div>
               </td>
               <td class="px-6 py-4 whitespace-nowrap">
-           ${post.title}
+           ${category.name}
               </td>
-              <td class="px-1 py-4 whitespace-nowrap">
-               <img src=" ${post.image}" alt="" class="w-[90px] h-[100px]">
-              </td>
-        
-                <td class="px-1 py-4 whitespace-nowrap text-sm text-gray-500 ">${post.day}</td>
                          <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                <a href="/#/admin/news/${post.id}/edit" class="text-indigo-600 hover:text-indigo-900">Sửa</a>
+                <a href="/#/admin/category/${category.id}/edit" class="text-indigo-600 hover:text-indigo-900">Sửa</a>
               </td>
-                 <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                <button data-id="${post.id}" class="btn btn-remove">Remove</button>
+                 <td class="px-6 py-4 whitespace-nowrap text-center text-sm font-medium">
+                <button data-id="${category.id}" class="btn btn-remove">Remove</button>
               </td>
        
             </tr>
@@ -124,11 +118,11 @@ ${headeradmin.render()}
                 const confirm = window.confirm("Ban muon xoa bai viet");
                 if (confirm) {
                     remove(id).then(() => {
-                        reRender(NewPage, "#app");
+                        reRender(Category, "#app");
                     });
                 }
             });
         });
     },
 };
-export default NewPage;
+export default Category;

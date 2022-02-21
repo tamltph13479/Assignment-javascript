@@ -57,7 +57,7 @@ const detail = {
                 <div class="mr-3">
                     <div class="border-[1px]">
                         <a href="">
-                            <img src="https://media-cdn.laodong.vn/Storage/NewsPortal/2021/5/26/913299/Ngan-Ha25.jpg">
+                            <img src="${data.image}">
                         </a>
                     </div>
                     <div class="flex flex-row justify-center">
@@ -201,7 +201,7 @@ const detail = {
         <div class ="">
               <h1 class="uppercase text-[16px] font-bold border-b-[1px] mt-2 pl-1"> Thông tin chi tiết sản phẩm </h1>
 
-              <p class="text-[14px] leading-[1.8] mb-3"> le the tam
+              <p class="text-[14px] leading-[1.8] mb-3"> ${data.details}
                 </p>
         </div>
 

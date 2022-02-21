@@ -1,7 +1,10 @@
+import toastr from "toastr";
 import Headers from "../../Components/Header";
 import footer from "../../Components/Footer";
-import { getAll } from "../../api/products";
-import { $ } from "../../utils/index";
+import {get, getAll } from "../../api/products";
+import { $ } from "../../utils";
+import { addToCart } from "../../utils/cart";
+import "toastr/build/toastr.min.css";
 
 const product = {
         async render() {
@@ -19,10 +22,10 @@ const product = {
                        <form action="">
                         <div class=" khoiy border-solid border-2 border-[#f3f3f3] rounded-lg overflow-hidden shadow-lg hover:scale-105 transition duration-500 cursor-pointer ">
                             <div class=" w-[100%] ">
-                                <a href="/products/${post.id}"> <img src="${post.image}" alt=""></a>
+                                <a href="/#/products/${post.id}"> <img src="${post.image}" alt=""></a>
                             </div>
                             <div class="py-[10px] px-[10px] leading-8">
-                                <a href="/products/${post.id}">
+                                <a href="/#/products/${post.id}">
                                     <h4 class="font-bold hover:underline">${post.name}</h4>
                                 </a>
                                 <p class="text-[15px] text-[red]">${post.price}</p>
@@ -49,10 +52,18 @@ const product = {
 
         `;
     },
-    afterRender() {
+    afterRender(id) {
         Headers.afterRender();
-        $("#btnAddToCart").addEventListener("click", () => {
-            console.log($("#btnAddToCart"));
+        $("#btnAddToCart").addEventListener("click", async () => {
+            const { data } = await get(id);
+            console.log(data);
+            addToCart(
+                { ...data, quantity: 1 },
+
+                () => {
+                    toastr.success(`Them san pham ${data.name} Thanh cong`);
+                },
+            );
         });
     },
 };
