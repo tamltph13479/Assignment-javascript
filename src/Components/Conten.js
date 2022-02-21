@@ -11,7 +11,7 @@ const content = {
             ${navcatory.render()}
                 </div>
                 <div class="banner bg-[white] w-[1000px] scroll-mb-[10px]">
-                    <img style="" id='anh' src='IMG/1.png' alt="" width='97%'><br>
+                    <img style="" id='anh' src='https://nguyenlam.com/wp-content/uploads/2021/04/Banner-Consumer_690x300.jpg' alt="" width='97%'><br>
                 </div>
             </div>
             <div class="mx-[120px] grid grid-cols-3 gap-6 overflow-hidden relative  my-[20px]">

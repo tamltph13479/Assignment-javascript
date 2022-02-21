@@ -35,44 +35,20 @@
   ],
   "posts": [
     {
-      "id": 1,
-      "title": "Bai Viet so 12",
-      "image": "http://res.cloudinary.com/ecommercer/image/upload/v1645341849/Anh/k8hjy46wk1wap1xezsj1.png",
-      "introduce": "      Tailwind automatically removes all unused CSS when building for production, which means your final CSS bundle is the smallest it could possibly be. In fact, most Tailwind projects ship less than 10kB of CSS to the client.12",
-      "content": "This sunny and spacious room is for those traveling light and looking for a comfy and cosy place to lay their head for a night or two. This beach house sits in a vibrant neighborhood littered with cafes, pubs, restaurants and supermarkets and is close to all the major attractions such as Edinburgh Castle and Arthur's Seat.12",
-      "day": "20-02-2022"
+      "title": "Samsung Galaxy Buds 2",
+      "image": "http://res.cloudinary.com/ecommercer/image/upload/v1645420798/Anh/nho1dky2zlncghtcc8te.jpg",
+      "introduce": "iPhone 13 128GB Chính hãng (VN/A) bán tại Di Động Việt - Đại lý uỷ quyền chính thức của Apple tại Việt Nam",
+      "content": "iPhone 13 128GB Chính hãng (VN/A) là phiên bản được phân phối chính thức bởi Apple Việt Nam",
+      "day": "21-02-2022",
+      "id": 1
     },
     {
-      "id": 2,
-      "title": "Bai Viet so 20",
-      "image": "http://res.cloudinary.com/ecommercer/image/upload/v1645192078/Anh/iwg9akomeigxdydfb7u8.jpg",
-      "introduce": "  Tailwind automatically removes all unused CSS when building for production, which means your final CSS bundle is the smallest it could possibly be. In fact, most Tailwind projects ship less than 10kB of CSS to the client.0",
-      "content": "This sunny and spacious room is for those traveling light and looking for a comfy and cosy place to lay their head for a night or two. This beach house sits in a vibrant neighborhood littered with cafes, pubs, restaurants and supermarkets and is close to all the major attractions such as Edinburgh Castle and Arthur's Seat.0",
-      "day": "18-02-2022"
-    },
-    {
-      "id": 4,
-      "title": "Bai Viet so 20222",
-      "image": "http://res.cloudinary.com/ecommercer/image/upload/v1645341863/Anh/gmqesw3njmszlgmdemry.png",
-      "introduce": " 1eweqw",
-      "content": "ewqeqw",
-      "day": "20-02-2022"
-    },
-    {
-      "title": "đâsd",
-      "image": "http://res.cloudinary.com/ecommercer/image/upload/v1645342145/Anh/dozumyat9ggjpdwzp9bp.png",
-      "introduce": "sadasdas",
-      "content": "ádasd",
-      "day": "20-02-2022",
-      "id": 5
-    },
-    {
-      "id": 6,
-      "title": "đâsdasđá",
-      "image": "http://res.cloudinary.com/ecommercer/image/upload/v1645371463/Anh/xpworicltuqjnlu6ifsj.png",
-      "introduce": " ádasdassadas",
-      "content": "sadasdasdsada",
-      "day": "20-02-2022"
+      "title": "iPhone 13 128GB",
+      "image": "http://res.cloudinary.com/ecommercer/image/upload/v1645420849/Anh/lzidjuxy5r1cuygucp3v.jpg",
+      "introduce": "iPhone 13 128GB Chính hãng (VN/A) là phiên bản được phân phối chính thức bởi Apple Việt Nam",
+      "content": "iPhone 13 128GB Chính hãng (VN/A) là phiên bản được phân phối chính thức bởi Apple Việt Nam",
+      "day": "21-02-2022",
+      "id": 2
     }
   ],
   "users": [
@@ -104,28 +80,28 @@
   ],
   "products": [
     {
-      "id": "1",
-      "name": "san pham con 10000000001",
-      "image": "http://res.cloudinary.com/ecommercer/image/upload/v1645367381/Anh/ietdwvhmflcuzbnmep1z.png",
-      "price": "10000001",
-      "quantity": "10000001",
-      "details": "    Hàng Loai 10000 chat lượng cao so mot viet nam1"
+      "id": 1,
+      "name": "Điện thoại iPhone (Apple) ",
+      "image": "http://res.cloudinary.com/ecommercer/image/upload/v1645420470/Anh/i6mdehob3qzugipwlxeh.webp",
+      "price": "1000",
+      "quantity": "12",
+      "details": "  iPhone 13 128GB Chính hãng (VN/A) bán tại Di Động Việt - Đại lý uỷ quyền chính thức của Apple tại Việt Nam, iPhone 13 "
     },
     {
-      "name": "San Pham 2",
-      "image": "http://res.cloudinary.com/ecommercer/image/upload/v1645276168/Anh/kx8tdsw4pkcxhgzyvxo1.jpg",
-      "price": "200",
-      "quantity": "100",
-      "details": "La San pham tot tren moi phuong dien",
-      "id": "2"
+      "id": 2,
+      "name": "iPhone 13 128GB Chính Hãng",
+      "image": "http://res.cloudinary.com/ecommercer/image/upload/v1645420604/Anh/fdgtifjnpdqqdfludo6m.webp",
+      "price": "10000",
+      "quantity": "10",
+      "details": " iPhone 13 128GB Chính hãng (VN/A) bán tại Di Động Việt - Đại lý uỷ quyền chính thức của Apple tại Việt Nam, iPhone 13\t"
     },
     {
-      "name": "fdsffsdfsd",
-      "image": "http://res.cloudinary.com/ecommercer/image/upload/v1645367166/Anh/znyqq38dmalvn1ee2dos.png",
-      "price": "fdsfsd",
-      "quantity": "fsdfsdf",
-      "details": "sdfsdfsd",
-      "id": "3"
+      "name": "iPhone 13 128GB Chính Hãng",
+      "image": "http://res.cloudinary.com/ecommercer/image/upload/v1645420634/Anh/x6whrfjk2dphxw4jkygw.webp",
+      "price": "1000000",
+      "quantity": "10",
+      "details": "iPhone 13 128GB Chính hãng (VN/A) bán tại Di Động Việt - Đại lý uỷ quyền chính thức của Apple tại Việt Nam",
+      "id": 3
     }
   ]
 }
