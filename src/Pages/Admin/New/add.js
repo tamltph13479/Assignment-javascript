@@ -35,13 +35,13 @@ ${headeradmin.render()}
                 <div class="col-span-6 sm:col-span-4">
                   <label class="block text-sm font-medium text-gray-700">Introduce</label>
                   <div class="mt-1">
-                  <textarea id="introduce-post" rows="3" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md p-[20px]" name="title-post2" ></textarea>
+                  <textarea id="introduce-post" rows="3" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md p-[20px]" name="Introduce" ></textarea>
                 </div>
                 </div>
                        <div class="col-span-6 sm:col-span-4">
                   <label class="block text-sm font-medium text-gray-700">content</label>
                 <div class="mt-1">
-                  <textarea id="content-post" name="about" rows="3" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md p-[20px]" name="title-post"></textarea>
+                  <textarea id="content-post" rows="3" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md p-[20px]" name="content"></textarea>
                 </div>
                 </div>
                        <div class="col-span-6 sm:col-span-4">
@@ -50,7 +50,7 @@ ${headeradmin.render()}
                   <div class="space-y-1 text-center">
              
                     <div class="flex text-sm text-gray-600">
-                        <input id="img-post"  type="file" class="" value="">
+                        <input id="img-post"  type="file" class="" value="" name="image">
                       </label>
                          <div><img width="200" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/832px-No-Image-Placeholder.svg.png" id="previewImage" /></div>
                     </div>
@@ -95,12 +95,38 @@ ${headeradmin.render()}
                     required: true,
                     minlength: 5,
                 },
+                Introduce: {
+                    required: true,
+                    minlength: 10,
+                },
+                content: {
+                    required: true,
+                    minlength: 5,
+                },
+                image: {
+                    required: true,
+                    minlength: 5,
+                },
+
             },
             messages: {
                 "title-post": {
-                    required: "Không được để trống trường này!",
-                    minlength: "Nhập ít nhất 5 ký tự anh ei",
+                    required: "<p class='text-[15px] text-[red]'> Khong duoc de trong truong nay</p>",
+                    minlength: "<p class='text-[15px] text-[red]'> Nhập ít nhất 5 ký tự</p>",
                 },
+                Introduce: {
+                    required: "<p class='text-[15px] text-[red]'> Khong duoc de trong truong nay</p>",
+                    minlength: "<p class='text-[15px] text-[red]'> Nhập ít nhất 10 ký tự</p>",
+                },
+                content: {
+                    required: "<p class='text-[15px] text-[red]'> Khong duoc de trong truong nay</p>",
+                    minlength: "<p class='text-[15px] text-[red]'> Nhập ít nhất 5 ký tự</p>",
+                },
+                image: {
+                    required: "<p class='text-[15px] text-[red]'> Khong duoc de trong truong nay</p>",
+
+                },
+
             },
             submitHandler() {
                 async function addProduct() {

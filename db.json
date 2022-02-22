@@ -7,6 +7,10 @@
     {
       "name": "Máy Tính",
       "id": 2
+    },
+    {
+      "name": "PC Gaming",
+      "id": 3
     }
   ],
   "posts": [
@@ -38,33 +42,13 @@
       "postCateId": 1
     }
   ],
-  "users": [
+  "banners": [
     {
       "id": "1",
-      "email": "thetam1998@gmail.com",
-      "password": "$2a$10$Q8iACh8ZkEi3I/9j2Wc/mOkjCFpmSXkQB2cWPz9qb2uytErnA5u1K",
-      "username": "Le The Tam",
-      "image": "http://res.cloudinary.com/ecommercer/image/upload/v1645366875/Anh/eybsde9yduas0keyhbzi.png"
-    },
-    {
-      "email": "thetam1999@gmail.com",
-      "password": "$2a$10$aSr5DD5BlLHqGyLUYs5Dt.uhmdqS41hX/Fk0UojTut15b2ZQ28Gv2",
-      "username": "eqwrwe",
-      "id": "2"
-    },
-    {
-      "email": "thetam19900@gmail.com",
-      "password": "$2a$10$OrSEt0FXVObE9hPBH4zty.dfv4Gg1EL1/0scXxhtz1thTuTSo77TG",
-      "username": "dsadas",
-      "id": "HSnZxsH"
-    },
-    {
-      "email": "thetam19984234@gmail.com",
-      "password": "$2a$10$JnNartibVYxmyDtQSYGMs.8SU.Pkcr61M202ZNPJgbzBRqd/w/PSu",
-      "username": "dsadas",
-      "id": "8-WgNLl"
+      "image": "http://res.cloudinary.com/ecommercer/image/upload/v1645548235/Anh/ceoays1mdcaaflrc5kcn.png"
     }
   ],
+  "users": [],
   "products": [
     {
       "id": 1,

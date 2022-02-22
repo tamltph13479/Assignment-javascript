@@ -62,8 +62,8 @@ ${headeradmin.render()}
             },
             messages: {
                 "title-post": {
-                    required: "Không được để trống trường này!",
-                    minlength: "Nhập ít nhất 5 ký tự anh ei",
+                    required: "<p class='text-[15px] text-[red]'> Khong duoc de trong truong nay</p>",
+                    minlength: "<p class='text-[15px] text-[red]'> Nhập ít nhất 5 ký tự</p>",
                 },
             },
             submitHandler() {

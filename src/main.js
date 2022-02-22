@@ -22,6 +22,9 @@ import Editcategory from "./Pages/Admin/category/edit";
 import blog from "./Pages/blog/index";
 import categorypase from "./Pages/Cattorypase";
 import Search from "./Pages/products/search";
+import banner from "./Pages/Admin/banner/index";
+import addbanner from "./Pages/Admin/banner/add";
+import editbanner from "./Pages/Admin/banner/edit";
 
 const router = new Navigo("/", { linksSelector: "a", hash: true });
 
@@ -61,6 +64,10 @@ router.on({
     "/admin/news": () => print(NewPage),
     "/admin/news/add": () => print(AddnewPage),
     "/admin/news/:id/edit": ({ data }) => print(Editnews, data.id),
+    // baner
+    "/admin/banner": () => print(banner),
+    "/admin/banner/add": () => print(addbanner),
+    "/admin/banner/:id/edit": ({ data }) => print(editbanner, data.id),
     // add user
     "/admin/user": () => print(users),
     "/admin/news/adduser": () => print(AddnewUser),

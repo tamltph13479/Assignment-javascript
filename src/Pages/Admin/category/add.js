@@ -62,7 +62,7 @@ ${headeradmin.render()}
             messages: {
                 "title-post": {
                     required: "<p class='text-[15px] text-[red]'> Khong duoc de trong truong nay</p>",
-                    minlength: "<p class='text-[15px] text-[red]'> Nhập ít nhất 5 ký tự anh ei</p>",
+                    minlength: "<p class='text-[15px] text-[red]'> Nhập ít nhất 5 ký tự</p>",
                 },
             },
             submitHandler() {

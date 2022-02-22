@@ -1,6 +1,8 @@
 import { getAll } from "../api/posts";
+import banner from "./banner";
 import navcatory from "./category";
 import producthome from "./produc";
+// <img style="" id='anh' src='https://nguyenlam.com/wp-content/uploads/2021/04/Banner-Consumer_690x300.jpg' alt="" width='97%'><br>
 
 const content = {
         async render() {
@@ -11,7 +13,7 @@ const content = {
             ${await navcatory.render()}
                 </div>
                 <div class="banner bg-[white] w-[1000px] scroll-mb-[10px]">
-                    <img style="" id='anh' src='https://nguyenlam.com/wp-content/uploads/2021/04/Banner-Consumer_690x300.jpg' alt="" width='97%'><br>
+                  ${await banner.render()}
                 </div>
             </div>
             <div class="mx-[120px] grid grid-cols-3 gap-6 overflow-hidden relative  my-[20px]">
