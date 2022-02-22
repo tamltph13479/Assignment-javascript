@@ -20,6 +20,8 @@ import Category from "./Pages/Admin/category";
 import Addcategory from "./Pages/Admin/category/add";
 import Editcategory from "./Pages/Admin/category/edit";
 import blog from "./Pages/blog/index";
+import categorypase from "./Pages/Cattorypase";
+import Search from "./Pages/products/search";
 
 const router = new Navigo("/", { linksSelector: "a", hash: true });
 
@@ -51,7 +53,9 @@ router.on({
     "/admin/dashboard": () => print(Dashboard),
     "/products": () => print(product),
     "/products/:id": ({ data }) => print(detail, data.id),
+    "/categorypase/:id": ({ data }) => print(categorypase, data.id),
     "/cart": () => print(CartPase),
+    "/search": ({ params }) => print(Search, params),
     // admin dashboard
     // add post
     "/admin/news": () => print(NewPage),

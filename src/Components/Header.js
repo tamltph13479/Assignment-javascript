@@ -49,8 +49,8 @@ const Headers = {
                             <button class="bg-[#2b2d42] text-[#ffffff] hover:text-[#ff0000] px-[20px] py-[8px] ">All categories</button>
                         </div>
                     </div>
-                    <form action="" class="w-[700px] mt-5 pl-10 flex ">
-                        <input type="text" class="h-10 w-10/12 pl-3 rounded-sm" placeholder="Nhập tên điện thoại, máy tính, phụ kiện... cần tìm">
+                    <form action="/search" class="w-[700px] mt-5 pl-10 flex ">
+                        <input type="text" class="h-10 w-10/12 pl-3 rounded-sm" placeholder="Nhập tên điện thoại, máy tính, phụ kiện... cần tìm" name="keyword">
                         <div>
                             <button class="bg-[#2b2d42] text-[#ffffff] hover:text-[#ff0000] px-[20px] py-[8px] rounded-r-lg">Tìm kiếm</button>
                         </div>

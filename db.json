@@ -1,39 +1,11 @@
 {
-    "categorys": [{
-            "id": 3,
+    "postCates": [{
+            "id": 1,
             "name": "Di Động 2"
         },
         {
             "name": "Máy Tính",
-            "id": 4
-        },
-        {
-            "name": "Laptop Gaming",
-            "id": 5
-        },
-        {
-            "name": "Iphone",
-            "id": 6
-        },
-        {
-            "name": "PC Gaming",
-            "id": 7
-        },
-        {
-            "name": "Đồ Họa PC",
-            "id": 8
-        },
-        {
-            "name": "Đèn collor",
-            "id": 9
-        },
-        {
-            "name": "Đồ Chơi",
-            "id": 10
-        },
-        {
-            "name": "dien thoai 3",
-            "id": 11
+            "id": 2
         }
     ],
     "posts": [{
@@ -42,7 +14,8 @@
             "introduce": "iPhone 13 128GB Chính hãng (VN/A) bán tại Di Động Việt - Đại lý uỷ quyền chính thức của Apple tại Việt Nam",
             "content": "iPhone 13 128GB Chính hãng (VN/A) là phiên bản được phân phối chính thức bởi Apple Việt Nam",
             "day": "21-02-2022",
-            "id": 1
+            "id": "8XfVO3T",
+            "postCateId": 2
         },
         {
             "title": "iPhone 13 128GB",
@@ -50,7 +23,17 @@
             "introduce": "iPhone 13 128GB Chính hãng (VN/A) là phiên bản được phân phối chính thức bởi Apple Việt Nam",
             "content": "iPhone 13 128GB Chính hãng (VN/A) là phiên bản được phân phối chính thức bởi Apple Việt Nam",
             "day": "21-02-2022",
-            "id": 2
+            "id": "8XfVO3C",
+            "postCateId": 1
+        },
+        {
+            "title": "iPhone 13 128GB",
+            "image": "http://res.cloudinary.com/ecommercer/image/upload/v1645420849/Anh/lzidjuxy5r1cuygucp3v.jpg",
+            "introduce": "iPhone 13 128GB Chính hãng (VN/A) là phiên bản được phân phối chính thức bởi Apple Việt Nam",
+            "content": "iPhone 13 128GB Chính hãng (VN/A) là phiên bản được phân phối chính thức bởi Apple Việt Nam",
+            "day": "21-02-2022",
+            "id": "8XfVO3F",
+            "postCateId": 1
         }
     ],
     "users": [{

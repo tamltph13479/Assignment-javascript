@@ -217,18 +217,8 @@ const detail = {
 
         `;
     },
-    afterRender(id) {
+    afterRender() {
         Headers.afterRender();
-        $("#btnAddToCart").addEventListener("click", async() => {
-            const { data } = await get(id);
-            console.log(data);
-            addToCart({...data, quantity: 1 },
-
-                () => {
-                    toastr.success(`Them san pham ${data.name} Thanh cong`);
-                },
-            );
-        });
     },
 };
 export default detail;
