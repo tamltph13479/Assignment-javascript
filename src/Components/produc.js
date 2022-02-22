@@ -4,9 +4,6 @@ const producthome = {
         async render() {
             const { data } = await getAll();
             return /* html */ `
-     
-
-            
                      <div class="product grid grid-cols-4 gap-5 ">
                         ${data.map((product) => `
                     <form action="">

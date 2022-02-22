@@ -60,7 +60,7 @@ const Headers = {
                         <div class="signin pl-5">
                               
           <ul class="flex">
-                             <a href="/cart">   <button class="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-[blue] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" >Gio Hàng </button></a>
+                             <a href="/#//cart">   <button class="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-[blue] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" >Gio Hàng </button></a>
                      </ul>
                         </div>
                     </div>

@@ -8,7 +8,7 @@ const navcatory = {
                  <ul class="border-solid border-2 border[#f3f3f3]">
                          ${data.map((category) => `
 
-        <li class="px-[30px] py-[10px]  hover:bg-[#f3f3f3] "><a class="" href="">${category.name}</a></li>
+        <li class="px-[30px] py-[10px]  hover:bg-[#f3f3f3] "><a class="" href="/#/categorypase/${category.id}">${category.name}</a></li>
               <hr>
 
 

@@ -11,18 +11,17 @@ const Search = {
             return /* html */ `
           <header>
         ${Headers.render()}
-        </header> 
+        </header>
             <article class=" mx-auto w-[1200px] ">
-                    
+
             <div class="conten my-[20px]">
                 <h1 class="font-bold text-[20px] py-[20px]">Ke qua tim kiem : ${keyword}</h1>
-       
+
                      <div class="product grid grid-cols-4 gap-5 ">
                         ${data.map((product) => `
-                 
+
                        <div class=" khoiy border-solid border-2 border-[#f3f3f3] rounded-lg overflow-hidden shadow-lg hover:scale-105 transition duration-500 cursor-pointer ">
-                                       
-              
+
                             <div class=" w-[100%] ">
                                 <a href="/#/products/${product.id}"> <img src="${product.image}" alt=""></a>
                             </div>
@@ -45,8 +44,6 @@ const Search = {
                 <footer class="bg-[#f3f3f3] min-w-full m-auto">
                 ${footer.render()}
                 </footer>
-
-
 
         `;
     },
