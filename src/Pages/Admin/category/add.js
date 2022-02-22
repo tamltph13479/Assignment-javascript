@@ -62,7 +62,7 @@ ${headeradmin.render()}
             messages: {
                 "title-post": {
                     required: "Không được để trống trường này!",
-                    minlength: "Nhập ít nhất 5 ký tự anh ei",
+                    minlength: "<p class='text-[reb]'> Nhập ít nhất 5 ký tự anh ei</p>",
                 },
             },
             submitHandler() {
