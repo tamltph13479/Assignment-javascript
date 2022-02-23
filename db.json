@@ -20,8 +20,7 @@
       "introduce": "iPhone 13 128GB Chính hãng (VN/A) bán tại Di Động Việt - Đại lý uỷ quyền chính thức của Apple tại Việt Nam",
       "content": "iPhone 13 128GB Chính hãng (VN/A) là phiên bản được phân phối chính thức bởi Apple Việt Nam",
       "day": "21-02-2022",
-      "id": "8XfVO3T",
-      "postCateId": 2
+      "id": "8XfVO3T"
     },
     {
       "title": "iPhone 13 128GB",
@@ -29,8 +28,7 @@
       "introduce": "iPhone 13 128GB Chính hãng (VN/A) là phiên bản được phân phối chính thức bởi Apple Việt Nam",
       "content": "iPhone 13 128GB Chính hãng (VN/A) là phiên bản được phân phối chính thức bởi Apple Việt Nam",
       "day": "21-02-2022",
-      "id": "8XfVO3C",
-      "postCateId": 1
+      "id": "8XfVO3C"
     },
     {
       "title": "iPhone 13 128GB",
@@ -38,17 +36,31 @@
       "introduce": "iPhone 13 128GB Chính hãng (VN/A) là phiên bản được phân phối chính thức bởi Apple Việt Nam",
       "content": "iPhone 13 128GB Chính hãng (VN/A) là phiên bản được phân phối chính thức bởi Apple Việt Nam",
       "day": "21-02-2022",
-      "id": "8XfVO3F",
-      "postCateId": 1
+      "id": "8XfVO3F"
     }
   ],
   "banners": [
     {
-      "id": "1",
-      "image": "http://res.cloudinary.com/ecommercer/image/upload/v1645548235/Anh/ceoays1mdcaaflrc5kcn.png"
+      "image": "http://res.cloudinary.com/ecommercer/image/upload/v1645588648/Anh/my2s9delqq9inhxrtq1p.jpg",
+      "id": 1
     }
   ],
-  "users": [],
+  "users": [
+    {
+      "id": "1",
+      "email": "thetam1998@gmail.com",
+      "password": "$2a$10$Q8iACh8ZkEi3I/9j2Wc/mOkjCFpmSXkQB2cWPz9qb2uytErnA5u1K",
+      "username": "Le The Tam",
+      "image": "http://res.cloudinary.com/ecommercer/image/upload/v1645366875/Anh/eybsde9yduas0keyhbzi.png"
+    },
+    {
+      "email": "admin2222@gmail.com",
+      "password": "$2a$10$mfLv6dwD6Wu4d/IHSdccU.E0IwfmFsz8yIh/ZVSt7.iLmqBJNU37O",
+      "username": "dsadasdasdas",
+      "image": "http://res.cloudinary.com/ecommercer/image/upload/v1645587792/Anh/smdz7fvzv8abq0o1oxbq.png",
+      "id": "20lK2FY"
+    }
+  ],
   "products": [
     {
       "id": 1,
@@ -56,7 +68,8 @@
       "image": "http://res.cloudinary.com/ecommercer/image/upload/v1645420470/Anh/i6mdehob3qzugipwlxeh.webp",
       "price": "1000",
       "quantity": "12",
-      "details": "  iPhone 13 128GB Chính hãng (VN/A) bán tại Di Động Việt - Đại lý uỷ quyền chính thức của Apple tại Việt Nam, iPhone 13 "
+      "details": "   iPhone 13 128GB ",
+      "postCateId": 1
     },
     {
       "id": 2,
@@ -64,15 +77,17 @@
       "image": "http://res.cloudinary.com/ecommercer/image/upload/v1645420604/Anh/fdgtifjnpdqqdfludo6m.webp",
       "price": "10000",
       "quantity": "10",
-      "details": " iPhone 13 128GB Chính hãng (VN/A) bán tại Di Động Việt - Đại lý uỷ quyền chính thức của Apple tại Việt Nam, iPhone 13\t"
+      "details": "  iPhone 13 128GB Chính hãng (VN/A) bán tại Di Động Việt",
+      "postCateId": 1
     },
     {
+      "id": 3,
       "name": "iPhone 13 128GB Chính Hãng",
       "image": "http://res.cloudinary.com/ecommercer/image/upload/v1645420634/Anh/x6whrfjk2dphxw4jkygw.webp",
       "price": "1000000",
       "quantity": "10",
-      "details": "iPhone 13 128GB Chính hãng (VN/A) bán tại Di Động Việt - Đại lý uỷ quyền chính thức của Apple tại Việt Nam",
-      "id": 3
+      "details": " iPhone 13 128GB Chính hãng (VN/A) ",
+      "postCateId": 1
     },
     {
       "name": "sÁaÁáA",
@@ -80,7 +95,8 @@
       "price": "10000006546456",
       "quantity": "10000000",
       "details": "fsdfsdfsd",
-      "id": 4
+      "id": 4,
+      "postCateId": 2
     }
   ]
 }

@@ -26,26 +26,26 @@ ${headeradmin.render()}
                             <label class="block text-gray-700 text-sm font-normal mb-2" >
               Name
               </label>
-                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"  required="" id="name" name="title-post">
+                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"  required="" id="name" name="name">
                         </div>
 
                         <div class="mb-4">
                             <label class="block text-gray-700 text-sm font-normal mb-2" >
                 Price
               </label>
-                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"  id="price">
+                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"  id="price" name="price">
                         </div>
 
                         <div class="mb-6">
                             <label class="block text-gray-700 text-sm font-normal mb-2" >
                 Quantity
               </label>
-                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="quantity">
+                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="quantity" name="quantity">
                         </div>
                         <div class="col-span-6 sm:col-span-4">
                   <label class="block text-gray-700 text-sm font-normal mb-2">Details</label>
                 <div class="mb-6">
-                  <textarea id="details" name="about" rows="3" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md p-[20px]"></textarea>
+                  <textarea id="details" name="detail" rows="3" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md p-[20px]" ></textarea>
                 </div>
                 </div>
                         <div class="col-span-6 sm:col-span-4">
@@ -54,7 +54,7 @@ ${headeradmin.render()}
                   <div class="space-y-1 text-center">
              
                     <div class="flex text-sm text-gray-600">
-                        <input id="img-post" type="file" class="">
+                        <input id="img-post" type="file" class="" name="image">
                         <div><img width="200" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/832px-No-Image-Placeholder.svg.png" id="previewImage" /></div>
                     </div>
 
@@ -99,16 +99,50 @@ ${headeradmin.render()}
 
         formAdd.validate({
             rules: {
-                "title-post": {
+                name: {
                     required: true,
                     minlength: 5,
                 },
+                price: {
+                    required: true,
+
+                },
+                quantity: {
+                    required: true,
+
+                },
+                detail: {
+                    required: true,
+
+                },
+                image: {
+                    required: true,
+
+                },
+
             },
             messages: {
-                "title-post": {
-                    required: "Không được để trống trường này!",
-                    minlength: "Nhập ít nhất 5 ký tự anh ei",
+                name: {
+                    required: "<p class='text-[15px] text-[red]'> Khong duoc de trong truong nay</p>",
+                    minlength: "<p class='text-[15px] text-[red]'> Nhập ít nhất 5 ký tự</p>",
                 },
+                price: {
+                    required: "<p class='text-[15px] text-[red]'> Khong duoc de trong truong nay</p>",
+
+                },
+                quantity: {
+                    required: "<p class='text-[15px] text-[red]'> Khong duoc de trong truong nay</p>",
+
+                },
+                detail: {
+                    required: "<p class='text-[15px] text-[red]'> Khong duoc de trong truong nay</p>",
+
+                },
+                image: {
+                    required: "<p class='text-[15px] text-[red]'> Khong duoc de trong truong nay</p>",
+
+                },
+
             },
             submitHandler() {
                 async function addProduct() {

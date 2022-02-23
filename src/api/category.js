@@ -21,6 +21,6 @@ export const upload = (category) => {
     return instance.put(url, category);
 };
 export const getCate = (id) => {
-    const url = `/postCates/${id}?_embed=posts`;
+    const url = `/postCates/${id}?_embed=products`;
     return instance.get(url);
 };

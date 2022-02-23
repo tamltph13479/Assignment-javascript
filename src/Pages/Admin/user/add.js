@@ -48,7 +48,7 @@ ${headeradmin.render()}
                   <div class="space-y-1 text-center">
              
                     <div class="flex text-sm text-gray-600">
-                        <input id="img-post" type="file" class="">
+                        <input id="img-post" type="file" class="" name="image">
                       <div><img width="200" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/832px-No-Image-Placeholder.svg.png" id="previewImage" /></div>
                     </div>
 
@@ -96,15 +96,40 @@ ${headeradmin.render()}
         });
         formAdd.validate({
             rules: {
-                "title-post": {
+                name: {
                     required: true,
                     minlength: 5,
                 },
+                email: {
+                    required: true,
+                    email: true,
+
+                },
+                password: {
+                    required: true,
+
+                },
+                image: {
+                    required: true,
+
+                },
             },
             messages: {
-                "title-post": {
-                    required: "Không được để trống trường này!",
+                name: {
+                    required: "<p class='text-[15px] text-[red]'> Khong duoc de trong truong nay</p>",
+                    minlength: "<p class='text-[15px] text-[red]'>Nhap it nhat 5 ky tu</p>",
+                },
+                email: {
+                    required: "<p class='text-[15px] text-[red]'> Vui long nhap dung dinh dang</p>",
+
+                },
+                password: {
+                    required: "<p class='text-[15px] text-[red]'> Khong duoc de trong truong nay</p>",
                     minlength: "Nhập ít nhất 5 ký tự anh ei",
+                },
+                image: {
+                    required: "<p class='text-[15px] text-[red]'> Khong duoc de trong truong nay</p>",
+
                 },
             },
             submitHandler() {

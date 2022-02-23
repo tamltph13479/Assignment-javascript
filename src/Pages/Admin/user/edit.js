@@ -27,21 +27,21 @@ ${headeradmin.render()}
                             <label class="block text-gray-700 text-sm font-normal mb-2" for="username">
                 Username
               </label>
-                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"  required="" autofocus="" placeholder="User name" id="username" value="${data.username}" name="title-post"/>
+                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"  required="" autofocus="" placeholder="User name" id="username" name="name" value="${data.username}" name="title-post"/>
                         </div>
 
                         <div class="mb-4">
                             <label class="block text-gray-700 text-sm font-normal mb-2" for="username">
                 Email
               </label>
-                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="email" v-model="form.email" type="email" required="" autofocus="" placeholder="Email" id="email-address" value="${data.email}">
+                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="email" v-model="form.email" type="email" required="" autofocus="" placeholder="Email" id="email-address" value="${data.email}" name="email">
                         </div>
 
                         <div class="mb-6">
                             <label class="block text-gray-700 text-sm font-normal mb-2" for="password">
                 Password
               </label>
-                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" v-model="form.password" type="password" placeholder="Password" name="password" required="" autocomplete="current-password" id="password" value="${data.password}">
+                            <input name="password"class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" v-model="form.password" type="password" placeholder="Password" name="password" required="" autocomplete="current-password" id="password" value="${data.password}">
                         </div>
                         <div class="col-span-6 sm:col-span-4">
                   <label class="block text-sm font-medium text-gray-700">image</label>
@@ -49,7 +49,7 @@ ${headeradmin.render()}
                   <div class="space-y-1 text-center">
              
                     <div class="flex text-sm text-gray-600">
-                        <input id="img-post" type="file" class="" value="">
+                        <input id="img-post" type="file" class="" value="" name="image">
                            <div><img width="200" src="${data.image}" id="previewImage" /></div>
                       
                     </div>
@@ -96,17 +96,42 @@ ${headeradmin.render()}
         imgPost.addEventListener("change", async(e) => {
             imgPreview.src = URL.createObjectURL(e.target.files[0]);
         });
-        formEdit.validate({
+        formAdd.validate({
             rules: {
-                "title-post": {
+                name: {
                     required: true,
                     minlength: 5,
                 },
+                email: {
+                    required: true,
+                    email: true,
+
+                },
+                password: {
+                    required: true,
+
+                },
+                image: {
+                    required: true,
+
+                },
             },
             messages: {
-                "title-post": {
-                    required: "Không được để trống trường này!",
+                name: {
+                    required: "<p class='text-[15px] text-[red]'> Khong duoc de trong truong nay</p>",
+                    minlength: "<p class='text-[15px] text-[red]'>Nhap it nhat 5 ky tu</p>",
+                },
+                email: {
+                    required: "<p class='text-[15px] text-[red]'> Vui long nhap dung dinh dang</p>",
+
+                },
+                password: {
+                    required: "<p class='text-[15px] text-[red]'> Khong duoc de trong truong nay</p>",
                     minlength: "Nhập ít nhất 5 ký tự anh ei",
+                },
+                image: {
+                    required: "<p class='text-[15px] text-[red]'> Khong duoc de trong truong nay</p>",
+
                 },
             },
             submitHandler() {

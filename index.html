@@ -10,19 +10,35 @@
     <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
 </head>
 <style>
-    .carousel-cell {
+    * {
         box-sizing: border-box;
-        width: 100%;
-        height: 400px;
-        margin-right: 10px;
-        border-radius: 15px;
-        background-size: cover;
-        background-position: center;
     }
     
-    .carousel-cell ::before {
+    body {
+        font-family: sans-serif;
+    }
+    
+    .carousel {
+        background: #EEE;
+    }
+    
+    .carousel-cell {
+        width: 66%;
+        height: 200px;
+        margin-right: 10px;
+        background: #8C8;
+        border-radius: 5px;
+        counter-increment: carousel-cell;
+    }
+    /* cell number */
+    
+    .carousel-cell:before {
         display: block;
-        content: '';
+        text-align: center;
+        content: counter(carousel-cell);
+        line-height: 200px;
+        font-size: 80px;
+        color: white;
     }
     
     .khoiy {
@@ -81,7 +97,15 @@
 
 
 <body>
+    <!-- <h1>Flickity - wrapAround</h1>
 
+    <div class="carousel" data-flickity='{ "wrapAround": true }'>
+        <div class="carousel-cell"></div>
+        <div class="carousel-cell"></div>
+        <div class="carousel-cell"></div>
+        <div class="carousel-cell"></div>
+        <div class="carousel-cell"></div>
+    </div> -->
 
     <div class="container min-w-full m-auto">
         <div id="app"></div>
