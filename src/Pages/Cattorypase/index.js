@@ -5,7 +5,6 @@ import { getCate } from "../../api/category";
 const categorypase = {
         async render(id) {
             const { data } = await getCate(id);
-            console.log(data);
             return /* html */ `
           <header>
         ${Headers.render()}

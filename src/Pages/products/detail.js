@@ -9,6 +9,7 @@ import "toastr/build/toastr.min.css";
 const detail = {
     async render(id) {
         const { data } = await get(id);
+        console.log(data);
         return /* html */ `
           <header>
         ${Headers.render()}
